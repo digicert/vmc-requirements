@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Verified Mark Certificates
 Verified Mark Certificate Requirements Authors
-1.4, 3-31-2022
+1.4, March 31, 2022
 :sectnums:
 :sectnumlevels: 5
 :toc:
