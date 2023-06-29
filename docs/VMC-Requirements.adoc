@@ -185,7 +185,7 @@ No stipulation.
 
 *Certification Practice Statement:* One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
-*Combined Mark*: A mark consisting of a graphic design, stylized logo, or image, with words and/or letters having a particular stylized appearance. For greater certainty, a “Combined Mark” includes marks made up of both word and design elements. See Appendix B for mapping of the names used by different trademarks offices to the definition of Combined Mark.
+*Combined Mark*: A mark consisting of a graphic design, stylized logo, or image, with words and/or letters having a particular stylized appearance. For greater certainty, a “Combined Mark” includes marks made up of both word and design elements. See <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Combined Mark.
 
 *Confirmation Request*: An appropriate out-of-band communication requesting verification or confirmation of the particular fact at issue.
 
@@ -211,7 +211,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Demand Deposit Account*: A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand. The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc. Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account.
 
-*Design Mark:* A mark consisting of a graphic design, stylized logo, or image, without words and/or letters. For greater certainty, a “Design Mark” includes marks made up solely of design elements. For Registered Marks, see [.underline]##Appendix B f##or mapping of the names used by different trademarks offices to the definition of Design Mark.
+*Design Mark:* A mark consisting of a graphic design, stylized logo, or image, without words and/or letters. For greater certainty, a “Design Mark” includes marks made up solely of design elements. For Registered Marks, see <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Design Mark.
 
 *Designated Individual:* The person who completes the F2F Verification Procedure under the provisions of <<_notarization_process_for_document_signed_by_designated_individual>> or <<_web_based_f2f_session_with_designated_individual>>.
 
@@ -1534,7 +1534,7 @@ The Subscriber will provide the CA with:
 
 In the alternative, the CA may verify the Registered Mark through the WIPO Global Brand Database at https://www3.wipo.int/branddb/en/
 
-The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor. The CA may, but is not required to, follow the guidelines in [.underline]#Appendix E# for comparison of the Registered Trademark with the Mark Representation.
+The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor. The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Registered Trademark with the Mark Representation.
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
 
@@ -1572,7 +1572,7 @@ In determining whether the Applicant is the owner or a licensee of the Governmen
 
 ====== Confirmation of Mark Representation
 
-The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in Appendix E for comparison of the Government Mark as confirmed with the Mark Representation.
+The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Government Mark as confirmed with the Mark Representation.
 
 ====== Color Restrictions
 
