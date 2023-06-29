@@ -7,6 +7,7 @@ Verified Mark Certificate Requirements Authors
 :toclevels: 3
 :appendix-caption: Appendix
 :xrefstyle: short
+:title-page:
 
 == INTRODUCTION
 
@@ -367,7 +368,7 @@ A Request Token that does not include a timestamp is valid for a single use and 
 
 The binding SHALL use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
-*Note:* Examples of Request Tokens include, but are not limited to:
+NOTE: Examples of Request Tokens include, but are not limited to:
 
 (i) a hash of the public key; or
 
@@ -1885,7 +1886,7 @@ Within 24 hours after receiving a Certificate Problem Report, the CA SHALL inves
 
 No stipulation.
 
-*Note:* Following certificate issuance, a certificate may be revoked for reasons stated in <<_circumstances_for_revocation>>. Therefore, relying parties should check the revocation status of all certificates that contain a CDP or OCSP pointer.
+NOTE: Following certificate issuance, a certificate may be revoked for reasons stated in <<_circumstances_for_revocation>>. Therefore, relying parties should check the revocation status of all certificates that contain a CDP or OCSP pointer.
 
 ==== CRL Issuance Frequency
 
