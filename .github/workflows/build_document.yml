@@ -10,7 +10,7 @@ jobs:
             -   name: Build
                 run: |
                     sudo apt update &&
-                    sudo apt install -y asciidoctor asciidoctor-pdf &&
+                    sudo apt install -y asciidoctor ruby-asciidoctor-pdf &&
                     asciidoctor-pdf docs/VMC-Requirements.adoc
             -   uses: actions/upload-artifact@v3
                 with:
