@@ -1805,7 +1805,7 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension.
 
-<<_certificate_operational_periods_and_key_pair_usage_periods>> limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in <<_initial_identity_validation>> to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under  or completed the validation itself no more than 398 days prior to issuing the Certificate.
+<<_certificate_operational_periods_and_key_pair_usage_periods>> limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in <<_initial_identity_validation>> to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under  or completed the validation itself no more than 398 days prior to issuing the Certificate. An authorization letter from the owner of record of the Registered Mark or Government Mark (as described in <<_verification_of_registered_mark_ownership_or_license>> and <<_verification_of_government_mark_ownership_or_license>>) may be reused for up to 1,858 days.
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
