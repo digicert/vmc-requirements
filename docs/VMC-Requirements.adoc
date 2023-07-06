@@ -2715,7 +2715,7 @@ The Mark Representation MUST:
 --
 +
 The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the AuthIndicators Working Group has published a SVG Tiny PS Guidelines document as well as a RNC tool to help validate the SVG. The VMC SVG is also required to follow those specifications. The logotype extension is REQUIRED, and SHOULD be marked non-critical. The CA SHALL verify that the Applicant provided Mark Representation meets this secure profile.
-. *Pilot identifier extension (OID: 1.3.6.1.4.1.53087.4.1)
+. *Pilot identifier extension (OID: 1.3.6.1.4.1.53087.4.1)*
 +
 The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
 +
