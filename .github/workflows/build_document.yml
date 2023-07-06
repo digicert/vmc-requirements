@@ -44,16 +44,14 @@ jobs:
                     sudo apt update &&
                     sudo apt install -y asciidoctor npm &&
                     /bin/bash -c "cd diff && npm install"
-            -   name: Get HTML doc
+            -   name: Get branch HTML doc
                 uses: actions/download-artifact@v3
-                with:
-                        path: base
             -   name: Build main
                 run: |
                     asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o bv2_cr1.html
             -   name: Create diff
                 run: |
-                    mv base/VMC-Requirements.html bv2-cr3.html &&
+                    mv VMC-Requirements.html bv2-cr3.html &&
                     npm run diff/diff &&
                     mv bv2-diff.html VMC-Requirements_diff.html
             -   name: Upload diff
