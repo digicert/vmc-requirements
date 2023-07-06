@@ -48,6 +48,7 @@ jobs:
                 uses: actions/download-artifact@v3
                 with:
                     name: artifact
+                    path: artifact
             -   name: Build main
                 run: |
                     asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o bv2_cr1.html
