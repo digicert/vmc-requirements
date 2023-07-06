@@ -46,6 +46,8 @@ jobs:
                     /bin/bash -c "cd diff && npm install"
             -   name: Get branch HTML doc
                 uses: actions/download-artifact@v3
+                with:
+                    name: VMC-Requirements.html
             -   name: Build main
                 run: |
                     asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o bv2_cr1.html
