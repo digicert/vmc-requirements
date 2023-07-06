@@ -1549,7 +1549,7 @@ In the alternative, the CA MAY verify the Registered Mark through the WIPO Globa
 
 The CA SHALL confirm that the owner of the Registered Mark identified in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>> (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements), or if the owner of the Registered Mark is not the same organization, that the Subject organization has obtained the right to use the Registered Mark through a mutually agreed-upon license from the entity who is the owner of record of the Registered Mark (or a Parent, Subsidiary, or Affiliate of the owner). If the owner of a Registered Mark is not the Applicant, the CA SHALL NOT issue a Certificate for the Registered Mark unless the CA obtains an authorization letter from the owner of record of the Registered Mark.  
 
-In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
+In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_mark_with_trademark_office>>.
 
 ====== Confirmation of Mark Representation
 
@@ -1561,7 +1561,8 @@ The CA SHALL also retain a screenshot or other record of the Mark Representation
 
 Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Registered Mark by the applicable Trademark Office. The CA SHALL examine the Registered Mark to determine what rights, if any, the Subject organization has to use of the Registered Mark in the colors of the Mark Representation submitted by the Subscriber. 
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in 
+<<_verification_of_mark_with_trademark_office>>.
 
 ===== Government Mark Verification
 
@@ -1579,7 +1580,7 @@ The CA SHALL also retain a screenshot or other record of the Mark Representation
 
 The CA SHALL confirm that the owner of the Government Mark confirmed under subsection (1) is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>>, or if the owner of the Government Mark is not the same Subject organization, that the Subject organization has obtained the right to use the Government Mark through statute, regulation, treaty, or government action, or by a mutually agreed-upon license from the entity who is the owner of record of the Government Mark. If the owner of a Government Mark is not the Applicant, the Applicant may only use the Government Mark if the CA obtains an authorization letter from the owner of record of the Government Mark.
 
-In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
+In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
 
 ====== Confirmation of Mark Representation
 
@@ -1589,48 +1590,11 @@ The CA SHALL confirm that the Mark Representation submitted by the Applicant mat
 
 Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Government Mark by the applicable statute, regulation, treaty, or government action verified by the CA. The CA SHALL examine the Government Mark to determine what rights, if any, the Subject organization has to use of the Government Mark in the colors of the Mark Representation submitted by the Subscriber.
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<<<_verification_of_statute_regulation_treaty_or_action>>.
 
 ==== Mark Verification in Mark Certificates
 
 The CA SHALL verify Marks using one of the following methods for use in Mark Certificates.
-
-===== Pending Application For Registered Trademark
-
-====== Verification of Pending Status of Application for Registration
-
-The Applicant will provide the CA with:
-
-. a copy of a completed and submitted registration application for a trademark with a Trademark Office, and
-. the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate. 
-
-The CA will also obtain screen shots of the application from the trademark agency's website and other evidence of filing for registration, including all data included in the trademark application and an image of the Mark that is being applied for.  The application must be in good standing in a pending or equivalent status at the time of verification and MUST be verified through consultation with the official database of the applicable Trademark Office, to be eligible for inclusion within a Mark Certificate.  
-
-In the alternative, the CA may verify the application through the WIPO Global Brand Database at https://www.wipo.int/reference/en/branddb/.
-
-====== Verification of Pending Status of Application
-
-The CA shall follow the identity verification procedures of <_initial_identity_verification>> as applied to Verified Mark vetting.  The CA SHALL confirm that the Applicant with the Mark identified application found in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under Section 3.2 (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements). 
-
-In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.  
-
-====== Confirmation of Mark Representation
-
-The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Mark as it appears in the pending application with the applicable Trademark Office or the WIPO Global Brand Database.  In determining whether the Mark Representation matches the Mark in the pending application, the CA SHALL maintain a record of its decisions and reasons therefor. The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Mark in the application with the Mark Representation. 
-
-The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Mark in the Application obtained from the applicable Trademark Office or the WIPO Global Brand Database as well as all other supporting data that the CA relies upon in issuing the Mark Certificate.
-
-====== Color Restrictions 
-
-Mark Representations in Mark Certificates based on an Application for Registered Trademark with a Trademark Office shall follow the same color rules that apply to Mark Representations for Verified Mark Certificates based on the rules for registered trademarks. 
-
-For Mark Certificates based on a pending trademark application of a Mark, Mark Representations for Combined Marks and Design Marks SHALL only be in colors that would be permitted for a Registered Mark by the applicable Trademark Office if the Mark trademark application is granted in its current form. The CA SHALL examine the Mark in the trademark application to determine what rights, if any, the Subject organization would have to use the Mark in the trademark application if it is granted and becomes a Registered Mark in the colors of the Mark Representation submitted by the Subscriber. 
- 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
-
-====== Other Restrictions
-
-Mark Certificates based on an Application for Registered Trademark with a Trademark Office may be renewed, but only if the application (or a substantially similar application for the same Mark) is still pending at the time of renewal.
 
 ===== Proof of Prior Use
 
@@ -1656,7 +1620,7 @@ This approved list may be modified from time to time.
 
 Mark Representations in Mark Certificates based on proof of prior use shall follow the same color rules that apply to Common Law Marks in the applicable jurisdiction. 
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the rules that apply to Common Law Marks in the applicable jurisdiction, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_types_of_events_recorded>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the rules that apply to Common Law Marks in the applicable jurisdiction, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_prior_use_of_mark_for_minimum_period>>.
 
 ===== Modification of Registered Trademark
 	
@@ -2719,7 +2683,7 @@ The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the Aut
 +
 The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
 +
-If the subject:markType field contains “Pending Registration Mark”, “Prior Use Mark”, or “Modified Registered Mark”, then this extension MUST be present and the value MUST contain a UTF8String with the value “Mark Certificate”. Otherwise, this extension MUST NOT be present.
+If the subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MUST be present and the value MUST contain a UTF8String with the value “Mark Certificate”. Otherwise, this extension MUST NOT be present.
 +
 If present, this extension SHALL be marked critical.
 
@@ -2876,19 +2840,19 @@ For Business Entities, the Registration Number that was received by the Business
 
 . *Certificate field:* subject:trademarkCountryOrRegionName (OID: 1.3.6.1.4.1.53087.1.3)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Pending Registration Mark”, or “Modified Registered Mark”; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
 +
-*Contents:* If the subject:markType field contains “Registered Mark” or “Modified Registration Mark”, then this field MUST containy the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf). If the subject:markType field contains “Pending Registration Mark”, then this field MUST contain the country or region of the Trademark Office with which the Registered Mark application was filed.
+*Contents:* If the subject:markType field contains “Registered Mark” or “Modified Registration Mark”, then this field MUST containy the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
 
 . *Certificate field:* subject:trademarkOfficeName (OID: 1.3.6.1.4.1.53087.1.2)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Pending Registration Mark”, or “Modified Registered Mark” and the applicable country/region has more than one national/regional intellectual property agency where trademarks can be registered; *Optional* if the subject:markType otherwise contains one of the following values: “Registered Mark”, “Pending Registration Mark”, or “Modified Registered Mark”; *Prohibited* if the subject:markType does not contain one of the following values: “Registered Mark”, “Pending Registration Mark”, or “Modified Registered Mark”
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark” and the applicable country/region has more than one national/regional intellectual property agency where trademarks can be registered; *Optional* if the subject:markType otherwise contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* if the subject:markType does not contain one of the following values: “Registered Mark” or “Modified Registered Mark”
 +
 *Contents:* This string value identifies the Trademark Office by inserting the Trademark Office name listed in the “Office” column in the WIPO directory of country and regional intellectual property agencies at https://www.wipo.int/directory/en/urls.jsp for the Trademark Office that registered the Registered Mark included in the Verified Mark Certificate or is processing the application of the Mark included in the Mark Certificate.
 
 . *Certificate field:* subject:trademarkIdentifier (OID: 1.3.6.1.4.1.53087.1.4)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Pending Registration Mark”, or “Modified Registered Mark”; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
 +
 *Contents:* This string value contains the identifier assigned by the Trademark Office to identify the Registered Mark or Registered Mark application.
 
@@ -2952,7 +2916,6 @@ The CA SHALL:
 
 |<<_registered_mark_verification>> |Registered Mark
 |<<_government_mark_verification>> |Government Mark
-|<<_pending_application_for_registered_trademark>> |Pending Registration Mark
 |<<_proof_of_prior_use>> |Prior Use Mark
 |<<_modification_of_registered_trademark>> |Modified Registered Mark
 |===
