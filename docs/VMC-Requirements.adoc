@@ -1590,7 +1590,7 @@ The CA SHALL confirm that the Mark Representation submitted by the Applicant mat
 
 Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Government Mark by the applicable statute, regulation, treaty, or government action verified by the CA. The CA SHALL examine the Government Mark to determine what rights, if any, the Subject organization has to use of the Government Mark in the colors of the Mark Representation submitted by the Subscriber.
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<<<_verification_of_statute_regulation_treaty_or_action>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
 
 ==== Mark Verification in Mark Certificates
 
