@@ -55,7 +55,7 @@ jobs:
                 run: |
                     mv base/VMC-Requirements.html bv2-cr3.html &&
                     npm run diff/diff &&
-                    mv diff/bv2-diff.html VMC-Requirements_diff.html
+                    mv bv2-diff.html VMC-Requirements_diff.html
             -   name: Upload diff
                 uses: actions/upload-artifact@v3
                 with:
