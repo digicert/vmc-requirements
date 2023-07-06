@@ -51,7 +51,7 @@ jobs:
                     path: artifact
             -   name: Build main
                 run: |
-                    asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o diff/bv2_cr1.html
+                    asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o diff/bv2-cr1.html
             -   name: Create diff
                 run: |
                     mv artifact/VMC-Requirements.html diff/bv2-cr3.html &&
