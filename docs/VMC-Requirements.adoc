@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Verified Mark Certificates
 Verified Mark Certificate Requirements Authors
-1.4, March 31, 2022
+1.5, July 14, 2023
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -51,7 +51,8 @@ This document SHALL be known as the Verified Mark Certificate Requirements (or �
 |1.1 |09-10-2021 |09-10-2021
 |1.2 |11-28-2021 |11-28-2021
 |1.3 |01-31-2022 |01-31-2022
-|1.4 |03-31-2022 |03-XX-2022
+|1.4 |03-31-2022 |03-31-2022
+|1.5 |07-15-2023 |07-15-2023
 |===
 
 ==== Verified Mark Certificate OIDs
@@ -104,7 +105,7 @@ Other groups that have participated in the development of these Requirements inc
 
 ==== Appropriate Certificate Uses
 
-The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates and Verified Marks. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates and Verified Marks.
+The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates, and Verified Marks, and Government Marks. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates, and Verified Marks, and Government Marks.
 
 ==== Prohibited Certificate Uses
 
@@ -145,6 +146,8 @@ No stipulation.
 *Applicant Representative:*A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
 
 *Application Software Supplier:* A supplier of relying-party application software that displays or uses Verified Mark Certificates and incorporates Root Certificates.
+
+*Archive Webpage Sources:* Online public sources that are reliable and that show screen captures of webpages and the date(s) on which the screen captures were made. See Section 3.2.16.2.3.2 for the list of sources allowed by these Requirements.
 
 *Attestation Letter:* A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
@@ -188,9 +191,13 @@ No stipulation.
 
 *Combined Mark*: A mark consisting of a graphic design, stylized logo, or image, with words and/or letters having a particular stylized appearance. For greater certainty, a “Combined Mark” includes marks made up of both word and design elements. See <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Combined Mark.
 
+*Common Law Mark:* A mark or logo used by an Applicant/Subscriber which the Applicant/Subscriber asserts a right to use under common law (or equivalent in civil law countries).  The Common Law mark may or may not also be a Registered Mark. 
+
 *Confirmation Request*: An appropriate out-of-band communication requesting verification or confirmation of the particular fact at issue.
 
 *Confirming Person*: A position within an Applicant's organization that confirms the particular fact at issue.
+
+*Conflicting Trademark Owner:* The owner or licensee of a registered trademark who asserts that the Mark Representation in a Verified Mark Certificate or Mark Certificate is being used in a way that infringes upon the owner's or licensee's registered trademark.
 
 *Consuming Entity (”CE”):* An entity that incorporates and uses the Mark Representation and related data contained in a Verified Mark Certificate in its products and services in accordance with the VMC Terms. [.underline]# Consuming Entities include mailbox providers.#
 
@@ -201,6 +208,8 @@ No stipulation.
 possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors; or (3) vote that portion of voting shares required for “control” under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
 
 *Country:* Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
+
+*Court Order of Infringement:* A final order from a court of competent jurisdiction or trademark office tribunal (or equivalent) stating that the Mark Representation contained in a Verified Mark Certificate or Mark Certificate improperly infringes the registered trademark of a Conflicting Trademark Owner (with details sufficient to identify the trademark and the owner). 
 
 *CRL*: Certificate Revocation List as defined in RFC5280. A CRL is a list identifying which certificates are revoked meaning invalid, published periodically by CAs.
 
@@ -280,13 +289,15 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Legal Entity Identifier (“LEI”):* LEI is specified in the ISO 17442 and names legal entities in the Global Legal Entity Identifier Index.
 
-*Mark:* A Combined Mark, Design Mark, or Word Mark. Marks may either be registered with a Trademark Office (Registered Mark) or created through government action (Government Mark).
+*Mark:* A Combined Mark, Design Mark, or Word Mark. Such Marks may either be (1) registered with a Trademark Office (Registered Mark) or created through government action (Government Mark); or (2) a mark or logo which qualifies to be included in a Mark Certificate.
 
-*Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Verified Mark Certificate. May be the same as the Applicant and/or Subscriber.
+*Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Verified Mark Certificate or a Mark Certificate. May be the same as the Applicant and/or Subscriber.
+
+*Mark Certificate:* A certificate that contains subject information and extensions specified in these VMC Requirements and that has been verified and issued by a MVA in accordance with these VMC Requirements but whose Mark is not a Registered Mark or a Government Mark.
 
 *Mark Representation:* A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under <<_subscriber_certificate>>.
 
-*Mark Verifying Authority (“MVA”):* The authority who issues a Verified Mark Certificate. Also referred to as a Certification Authority or CA.
+*Mark Verifying Authority (“MVA”):* The authority who issues a Verified Mark Certificate or Mark Certificate. Also referred to as a Certification Authority or CA.
 
 *Maximum Validity Period*: 1. The maximum time period for which the issued VMC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a VMC pursuant to these Requirements.
 
@@ -442,7 +453,7 @@ Both are published by the AuthIndicators Working Group.
 
 *Verified Legal Opinion*: A document meeting the requirements specified in <<_verified_legal_opinion>> of these Requirements.
 
-*Verified Mark Certificate:* A certificate that contains subject information and extensions specified in these VMC Requirements and that has been verified and issued by a CA in accordance with these VMC Requirements.
+*Verified Mark Certificate:* A certificate that contains subject information and extensions specified in these VMC Requirements and that has been verified and issued by a CA in accordance with these VMC Requirements. Additionally, the certificate contains a Mark Representation that has been verified as a Registered Mark or Government Mark.
 
 *Verified Method of Communication:* The use of a telephone number, a fax number, an email address, or postal delivery address, confirmed by the CA in accordance with <<_verified_method_of_communication>> of the Requirements as a reliable way of communicating with the Applicant.
 
@@ -1483,7 +1494,7 @@ The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 
 
 ==== CAA Records for Verified Mark Certificates
 
-. As part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each dNSName in the subjectAltName extension of the certificate to be issued, as specified in Subsection (2). If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater. CAA checking is optional for VMCs issued before January 1, 2021, but MUST be done for VMCs issued on or after January 1, 2022.
+. As part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each dNSName in the subjectAltName extension of the certificate to be issued, as specified in Subsection (2). If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 +
 --
 This stipulation does not prevent the CA from checking CAA records at any other time.
@@ -1519,10 +1530,9 @@ If a CAA record with the “issuevmc” Property Tag is present in the Relevant 
 The sub-syntax of the “issuevmc” Property Tag value is the same as the “issue” Property Tag as defined in section 4.2 of RFC 8659. The semantics of the “issuevmc” Property Tag are similar to the “issue” Property Tag, with the only difference being that the “issuevmc” Property Tag restricts issuance of Verified Mark Certificates as opposed to TLS Server Authentication Certificates.
 --
 
-[#registered-mark-verification-top-level]
-==== Registered Mark Verification
+==== Mark Verification in Verified Mark Certificates
 
-In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Registered Mark as follows:
+In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Mark as follows:
 
 ===== Registered Mark Verification
 
@@ -1533,25 +1543,26 @@ The Subscriber will provide the CA with:
  . the Registered Mark's trademark registration number and name of the Trademark Office that granted the trademark registration, and
  . the Mark Representation in SVG format that the Applicant wishes to include in the Verified Mark Certificate. Registered Marks must be in good standing and MUST be verified through consultation with the official database of the applicable Trademark Office, to be eligible for inclusion within a Verified Mark Certificate. In addition, only Registered Marks are eligible for inclusion within the logotype (as defined in RFC3709). For clarity and without limitation, unregistered marks are not eligible as a logotype in the registered mark profile.
 
-In the alternative, the CA may verify the Registered Mark through the WIPO Global Brand Database at https://www3.wipo.int/branddb/en/
+In the alternative, the CA MAY verify the Registered Mark through the WIPO Global Brand Database at https://www.wipo.int/reference/en/branddb/.
 
-The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor. The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Registered Trademark with the Mark Representation.
+====== Verification of Registered Mark Ownership or License
+
+The CA SHALL confirm that the owner of the Registered Mark identified in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>> (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements), or if the owner of the Registered Mark is not the same organization, that the Subject organization has obtained the right to use the Registered Mark through a mutually agreed-upon license from the entity who is the owner of record of the Registered Mark (or a Parent, Subsidiary, or Affiliate of the owner). If the owner of a Registered Mark is not the Applicant, the CA SHALL NOT issue a Certificate for the Registered Mark unless the CA obtains an authorization letter from the owner of record of the Registered Mark.  
+
+In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_mark_with_trademark_office>>.
+
+====== Confirmation of Mark Representation
+
+The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor.  The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Registered Trademark with the Mark Representation. 
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
-
-====== Verification of Registered Mark Ownership or License 
-
-The CA SHALL confirm that the owner of the Registered Mark identified in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>> (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements), or if the owner of the Registered Mark is not the same organization, that the Subject organization has obtained the right to use the Registered Mark through a mutually agreed-upon license from the entity who is the owner of record of the Registered Mark (or a Parent, Subsidiary, or Affiliate of the owner). If the owner of a Registered Mark is not the Applicant, the Applicant may only use the Registered Mark if the CA obtains an authorization letter from the owner of record of the Registered Mark.  
-
-In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_method_to_prove_possession_of_private_key>>.
 
 ====== Color Restrictions 
 
 Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Registered Mark by the applicable Trademark Office. The CA SHALL examine the Registered Mark to determine what rights, if any, the Subject organization has to use of the Registered Mark in the colors of the Mark Representation submitted by the Subscriber. 
 
-
-
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_method_to_prove_possession_of_private_key>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in 
+<<_verification_of_mark_with_trademark_office>>.
 
 ===== Government Mark Verification
 
@@ -1569,7 +1580,7 @@ The CA SHALL also retain a screenshot or other record of the Mark Representation
 
 The CA SHALL confirm that the owner of the Government Mark confirmed under subsection (1) is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>>, or if the owner of the Government Mark is not the same Subject organization, that the Subject organization has obtained the right to use the Government Mark through statute, regulation, treaty, or government action, or by a mutually agreed-upon license from the entity who is the owner of record of the Government Mark. If the owner of a Government Mark is not the Applicant, the Applicant may only use the Government Mark if the CA obtains an authorization letter from the owner of record of the Government Mark.
 
-In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_method_to_prove_possession_of_private_key>>.
+In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
 
 ====== Confirmation of Mark Representation
 
@@ -1579,7 +1590,85 @@ The CA SHALL confirm that the Mark Representation submitted by the Applicant mat
 
 Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Government Mark by the applicable statute, regulation, treaty, or government action verified by the CA. The CA SHALL examine the Government Mark to determine what rights, if any, the Subject organization has to use of the Government Mark in the colors of the Mark Representation submitted by the Subscriber.
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_method_to_prove_possession_of_private_key>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
+
+==== Mark Verification in Mark Certificates
+
+The CA SHALL verify Marks using one of the following methods for use in Mark Certificates.
+
+===== Proof of Prior Use
+
+====== Verification of Prior Use of Mark for Minimum Period
+
+This type of Mark Certificate is appropriate for Common Law Marks that are not Registered Marks.
+
+The Applicant will provide the CA with the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate. The CA SHALL verify that:
+. a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the domain name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
+. a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on a domain currently controlled by the applicant, where the historical display is verified via one of the Archive Webpage Sources allowed by these Requirements.
+
+The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all Mark images found during the verification process stated in the previous paragraph. 
+
+====== Approved Archive Webpage Sources 
+
+Validations of Mark Representations performed in accordance with <<_verification_of_prior_use_of_mark_for_mininum_period>> SHALL employ one of the following Archive Webpage Sources:
+
+*	archive.org 
+
+This approved list may be modified from time to time.
+
+====== Color Restrictions 
+
+Mark Representations in Mark Certificates based on proof of prior use shall follow the same color rules that apply to Common Law Marks in the applicable jurisdiction. 
+
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the rules that apply to Common Law Marks in the applicable jurisdiction, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_prior_use_of_mark_for_minimum_period>>.
+
+===== Modification of Registered Trademark
+	
+====== Verification of Modification of Registered Trademark
+
+The CA will perform the verification steps under <<_verification_of_mark_with_trademark_office>> and <<_verification_of_registered_mark_ownership_or_license>> for the Registered Mark that is to be the basis of the modification proposed by the Applicant. The Applicant will provide the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate.  
+
+====== Confirmation of Mark Representation
+
+The CA may accept the following forms of modification of the Registered Mark in the Mark Representation:
+
+. For Combined Marks, the location of any word mark elements MAY be rearranged in relation to the design mark elements (for example, the word mark elements may be relocated from the right side of the design mark elements to below the design mark elements, and MAY also include separating and stacking the word mark elements into a more compact area).
+. For Design Marks and Combined Marks, a portion of the design mark element MAY be removed (but more than 49% of the design mark element SHALL NOT be removed), but the remaining design mark element SHALL NOT be altered from the original. In the case of Combined Marks, the word mark elements MAY also be relocated in relation to the remaining design mark element as described in (1).
+. For Word Marks and Combined Marks where the word mark element consists of a single word, the one word MAY be separated into multiple parts which may be stacked or not.
+. For Word Marks and Combined Marks where the word mark element consists of multiple words, MAY be separated into multiple parts which may be stacked or not, or the multiple words MAY be combined into a single word.
+. Modified Word Marks MAY be shown in any font or color against a colored or patterned background.
+
+The CA SHOULD review the modified Mark Representation to determine if the modification makes a significant change to the obvious meaning of the original mark (as compared to the Registered Mark), and if so should notify the Applicant that the modifications cannot be accepted as submitted but must be further modified.  However, the Applicant may continue to request a Mark Certificate with the requested further modifications at the Applicant's option.
+
+As a requirement to accepting a modification in the Mark Representation from the Registered Mark, the CA MAY require the Applicant to defend, indemnify, and hold harmless the CA from all claims which may arise from any party as a result of such modification. 
+
+The following are examples of permitted modifications to registered Word Marks and word mark elements of Combined Marks.
+
+[%header,cols="1,1,1"]
+|===
+|Registered Word Mark
+2+|Permitted Modifications
+
+|Pretty Logo
+|_Pretty_
+
+_Logo_
+
+|``Pretty``
+
+``Logo``
+
+|Long-named Company
+
+|*Long-named*
+
+*Company*
+
+|[.big]#L# ong-
+
+[.big]#N# amed
+[.big]#C# ompany
+|===
 
 ====  Other Verification Requirements
 
@@ -1680,7 +1769,7 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name to be included in the Certificate's SubjectAltName extension.
 
-<<_certificate_operational_periods_and_key_pair_usage_periods>> limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in <<_initial_identity_validation>> to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under  or completed the validation itself no more than 398 days prior to issuing the Certificate.
+<<_certificate_operational_periods_and_key_pair_usage_periods>> limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in <<_initial_identity_validation>> to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under  or completed the validation itself no more than 398 days prior to issuing the Certificate. An authorization letter from the owner of record of the Registered Mark or Government Mark (as described in <<_verification_of_registered_mark_ownership_or_license>> and <<_verification_of_government_mark_ownership_or_license>>) may be reused for up to 1,858 days.
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
@@ -1848,6 +1937,7 @@ The CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate
 . The CA determines or is made aware that any of the information appearing in the Certificate is inaccurate;
 . The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 . Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement.
+. The CA receives a Court Order of Infringement, confirms the authenticity of the Court Order of Infringement, and provides 3 business days' notice to the Subscriber that the VMC or MC will be revoked.
 
 ===== Reasons for Revoking a Subordinate CA Certificate
 
@@ -1866,13 +1956,13 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 
 ==== Who Can Request Revocation
 
-The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
+The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, Conflicting Trademark Owners, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
 ==== Procedure for Revocation Request
 
 The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and Certificate Problem Reports.
 
-The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of their CPS.
+The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, Conflicting Trademark Owners, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, trademark infringement, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of their CPS.
 
 ==== Revocation Request Grace Period
 
@@ -1881,6 +1971,8 @@ No stipulation.
 ==== Time within which CA Must Process the Revocation Request
 
 Within 24 hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report.
+
+Within a commercially reasonable period of time sufficient to allow the CA to confirm all relevant facts and communicate with all relevant parties, the CA SHALL investigate the facts and circumstances related to a Court Order of Infringement submitted by a Conflicting Trademark Owner and thereafter provide appropriate notice and take appropriate action.
 
 ==== Revocation Checking Requirement for Relying Parties
 
@@ -2552,13 +2644,13 @@ This extension MUST be present. It MUST NOT be marked critical, and it MUST cont
 . *authorityInformationAccess*
 +
 This extension SHOULD be present. It MUST NOT be marked critical, and it SHOULD contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).. It MAY contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1).
-. *basicConstraints (optional)*
+. *basicConstraints*
 +
-The cA field MUST NOT be true.
+This extension is optional. If present, the cA field MUST NOT be true.
 
-. *keyUsage (optional)*
+. *keyUsage*
 +
-If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
+This extension is optional. If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
 . *extKeyUsage (required)*
 +
 The Extended Key Usage extension [RFC5280] MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Verified Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This is REQUIRED, and the extension SHOULD be marked non-critical.
@@ -2587,6 +2679,13 @@ The Mark Representation MUST:
 --
 +
 The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the AuthIndicators Working Group has published a SVG Tiny PS Guidelines document as well as a RNC tool to help validate the SVG. The VMC SVG is also required to follow those specifications. The logotype extension is REQUIRED, and SHOULD be marked non-critical. The CA SHALL verify that the Applicant provided Mark Representation meets this secure profile.
+. *Pilot identifier extension (OID: 1.3.6.1.4.1.53087.4.1)*
++
+The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
++
+If the subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MUST be present and the value MUST contain a UTF8String with the value “Mark Certificate”. Otherwise, this extension MUST NOT be present.
++
+If present, this extension SHALL be marked critical.
 
 ===== All Certificates
 
@@ -2632,13 +2731,13 @@ Entries in the dNSName MUST be in the "preferred name syntax", as specified in R
 ====== Subject Distinguished Name Fields
 
 [loweralpha]
-. *Certificate Field:* subject:commonName (OID 2.5.4.3)
+. *Certificate field:* subject:commonName (OID 2.5.4.3)
 +
 *Required/Optional:* Deprecated (Discouraged, but not prohibited)
 *Contents:*
 +
 The contents MUST either be the same as the Subject Organization Name defined in <<_subject_distinguished_name_fields>> (b), or the Word Mark field defined in <<_subject_distinguished_name_fields>> (p).
-. *Certificate Field:* subject:organizationName (OID 2.5.4.10)
+. *Certificate field:* subject:organizationName (OID 2.5.4.10)
 +
 *Required*
 +
@@ -2652,13 +2751,13 @@ In addition, an assumed name or DBA name used by the Subject MAY be included at 
 +
 If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with <<_authentication_of_organization_and_domain_identity>> and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the Verified Mark Certificate.
 
-. *Certificate Field:* Number and street: subject:streetAddress (OID: 2.5.4.9)
+. *Certificate field:* subject:streetAddress (OID: 2.5.4.9)
 +
 *Optional*
 +
 *Contents:* The subject:streetAddress field MUST contain the Subject's street address information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
-. *Certificate Field:* subject:localityName (OID: 2.5.4.7)
+. *Certificate field:* subject:localityName (OID: 2.5.4.7)
 +
 *Required* if the subject:stateOrProvinceName field is absent.
 +
@@ -2666,7 +2765,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 +
 *Contents:* If present, the subject:localityName field MUST contain the Subject's locality information as verified under <<_authentication_of_organization_and_domain_identity>>. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with <<_subject_distinguished_name_fields>> (g), the localityName field MAY contain the Subject's locality and/or state or province information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
-. *Certificate Field:* subject:stateOrProvinceName (OID: 2.5.4.8)
+. *Certificate field:* subject:stateOrProvinceName (OID: 2.5.4.8)
 +
 *Required* if the subject:localityName field is absent.
 +
@@ -2674,25 +2773,25 @@ If the combination of names or the organization name by itself exceeds 64 charac
 +
 *Contents:* If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under <<_authentication_of_organization_and_domain_identity>>. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with <<_subject_distinguished_name_fields>> (g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
-. *Certificate Field:* subject:postalCode (OID: 2.5.4.17)
+. *Certificate field:* subject:postalCode (OID: 2.5.4.17)
 +
 *Optional*
 +
 *Contents*: The subject:postalCode field MUST contain the Subject's zip or postal information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
-. *Certificate Field:* subject:countryName (OID: 2.5.4.6)
+. *Certificate field:* subject:countryName (OID: 2.5.4.6)
 +
 *Required*
 +
 *Contents:* The subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under <<_authentication_of_organization_and_domain_identity>>. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-. *Certificate Field:* subject:organizationalUnitName (OID: 2.5.4.11)
+. *Certificate field:* subject:organizationalUnitName (OID: 2.5.4.11)
 +
 *Optional*
 +
 The Organizational Unit Name field specifies an organizational unit. It identifies an organizational unit with which the certificate is affiliated. The designated organizational unit is understood to be part of an organization designated by an organizationName field. The value for Organizational Unit Name is a string chosen by the organization of which it is part (e.g., OU = "Technology Division"). See ISO/IEC 9594-6:2014 (E) Rec. ITU-T X.520 (10/2012).
 
-. *Certificate Field*: subject:businessCategory (OID: 2.5.4.15)
+. *Certificate field*: subject:businessCategory (OID: 2.5.4.15)
 +
 *Required*
 +
@@ -2716,7 +2815,7 @@ _subject:jurisdictionCountryName_ (OID: 1.3.6.1.4.1.311.60.2.1.3)
 +
 *Contents*: These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency. For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the [.underline]#country# level MUST include the country information but MUST NOT include the state or province or locality information. Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the [.underline]#state or province# level MUST include both country and state or province information, but MUST NOT include locality information. And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the [.underline]#locality# level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information. Country information MUST be specified using the applicable ISO country code. State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
-. *Certificate field*: _Subject:serialNumber_ (OID: 2.5.4.5)
+. *Certificate field*: subject:serialNumber (OID: 2.5.4.5)
 +
 *Required*
 +
@@ -2726,7 +2825,7 @@ For Government Entities that do not have a Registration Number or readily verifi
 +
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field. For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-. *Certificate Field:* _Subject:legalEntityIdentifier_ (OID: 1.3.6.1.4.1.53087.1.5)
+. *Certificate field:* subject:legalEntityIdentifier (OID: 1.3.6.1.4.1.53087.1.5)
 +
 *Optional*
 +
@@ -2739,33 +2838,31 @@ For Business Entities, the Registration Number that was received by the Business
 . The CA SHALL verify that the ValidationSources field of the associated LEI record contains the designation FULLY_CORROBORATED before including an LEI in a VMC.
 --
 
-. *Certificate field:* _Subject:trademarkCountryOrRegionName_ (OID: 1.3.6.1.4.1.53087.1.3)
+. *Certificate field:* subject:trademarkCountryOrRegionName (OID: 1.3.6.1.4.1.53087.1.3)
 +
-*Required* if the Certificate contains a Mark verified in accordance with <<_registered_mark_verification>>; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
 +
-*Contents:* This string value identifies the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
-+
-Regional agencies such as the African Regional Intellectual Property Organization (ARIPO) (AP), Benelux Office for Intellectual Property (BOIP)(BX,) European Union Intellectual Property Office (EUIPO) (EM), and African Intellectual Property Organization (OA) SHALL be encoded using their 2-letter codes in this field.
+*Contents:* If the subject:markType field contains “Registered Mark” or “Modified Registration Mark”, then this field MUST containy the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
 
-. *Certificate field:* _Subject:trademarkOfficeName_ (OID: 1.3.6.1.4.1.53087.1.2)
+. *Certificate field:* subject:trademarkOfficeName (OID: 1.3.6.1.4.1.53087.1.2)
 +
-*Required* if the Certificate contains a Mark verified in accordance with <<_registered_mark_verification>> and* the applicable country/region has more thanone national/regional intellectual property agency where trademarks canberegistered; *Optional* if the Certificate otherwise contains a Mark verified in accordance with <<_registered_mark_verification>>.
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark” and the applicable country/region has more than one national/regional intellectual property agency where trademarks can be registered; *Optional* if the subject:markType otherwise contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* if the subject:markType does not contain one of the following values: “Registered Mark” or “Modified Registered Mark”
 +
-*Contents:* This string value identifies the Trademark Office by inserting the URL listed in the “Web site” column or the Trademark Office name listed in the “Office” column in theWIPO directory of country and regional intellectual property agencies at https://www.wipo.int/directory/en/urls.jsp for the Trademark Office that registered the Registered Mark included in the Verified MarkCertificate. Effective 2022-07-01, the Name for the Trademark Office SHALL be encoded in this field and the URL for the Trademark Office SHALL NOT be encoded in this field.
+*Contents:* This string value identifies the Trademark Office by inserting the Trademark Office name listed in the “Office” column in the WIPO directory of country and regional intellectual property agencies at https://www.wipo.int/directory/en/urls.jsp for the Trademark Office that registered the Registered Mark included in the Verified Mark Certificate or is processing the application of the Mark included in the Mark Certificate.
 
-. *Certificate field:* _Subject:trademarkRegistration_ (OID: 1.3.6.1.4.1.53087.1.4)
+. *Certificate field:* subject:trademarkIdentifier (OID: 1.3.6.1.4.1.53087.1.4)
 +
-*Required* if the Certificate contains a Mark verified in accordance with <<_registered_mark_verification>>; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
 +
-*Contents:* This string value contains the registration number given by the Trademark Office to identify the Registered Mark. This field is REQUIRED.
+*Contents:* This string value contains the identifier assigned by the Trademark Office to identify the Registered Mark or Registered Mark application.
 
-. *Certificate field:* _Subject:wordMark_ (OID: 1.3.6.1.4.1.53087.1.6)
+. *Certificate field:* subject:wordMark (OID: 1.3.6.1.4.1.53087.1.6)
 +
 *Optional*
 +
 *Contents:* Contains a Word Mark or the word(s) included in a Combined Mark.
 
-. *Certificate field:* _Subject:organizationIdentifier_ (OID: 2.5.4.97)
+. *Certificate field:* subject:organizationIdentifier (OID: 2.5.4.97)
 +
 *Optional*
 +
@@ -2804,56 +2901,67 @@ The CA SHALL:
 . confirm that the organization represented by the Registration Reference is the same as the organization named in the organizationName field as specified in <<_subject_distinguished_name_fields>> (b) within the context of the subject's jurisdiction as specified in <<_subject_distinguished_name_fields>> (j);
 . further verify the Registration Reference matches other information verified in accordance with <<_initial_identity_validation>>;
 . take appropriate measures to disambiguate between different organizations as described in <<_registration_schemes>> for each Registration Scheme;
-. Apply the validation rules relevant to the Registration Scheme as in <<_registration_schemes>>.
+. apply the validation rules relevant to the Registration Scheme as in <<_registration_schemes>>.
 --
 
-. *Certificate field:* _Subject:markType_ (OID: 1.3.6.1.4.1.53087.1.13)
+. *Certificate field:* _subject:markType_ (OID: 1.3.6.1.4.1.53087.1.13)
 +
-*Optional* for Certificates issued prior to 2022-07-01 that contain Marks verified in accordance with <<_registered_mark_verification>>; *Required* otherwise
+*Required*
 +
-*Contents:* If the Certificate contains a Mark verified in accordance with <<_registered_mark_verification>>, then this field MUST contain the string “*Registered Mark*”. If the Certificates contains a Mark verified in accordance with <<_government_mark_verification>>, then this field MUST contain the string “*Government Mark*”. Any other values MUST NOT be included.
+*Contents:* This field MUST contain one of the following values corresponding to the sub-section in <<_mark_verification_in_verified_mark_certificates>> or <<_mark_verification_in_mark_certificates>> that the CA employed to validate the Mark included in the Certificate:
++
+[%header,cols="1,1"]
+|===
+|Section number of Mark validation method |subject:markType value
 
-[loweralpha, start=19]
+|<<_registered_mark_verification>> |Registered Mark
+|<<_government_mark_verification>> |Government Mark
+|<<_proof_of_prior_use>> |Prior Use Mark
+|<<_modification_of_registered_trademark>> |Modified Registered Mark
+|===
+
 . *Certificate fields:*
 +
 Locality (if required):
 +
-_subject:statuteLocalityName_ (OID: 1.3.6.1.4.1.53087.3.4)
+subject:statuteLocalityName (OID: 1.3.6.1.4.1.53087.3.4)
 +
 State or province (if required):
 +
-_subject:statuteStateOrProvinceName_ (OID: 1.3.6.1.4.1.53087.3.3)
+subject:statuteStateOrProvinceName (OID: 1.3.6.1.4.1.53087.3.3)
 +
 Country:
 +
-_subject:statuteCountryName_ (OID: 1.3.6.1.4.1.53087.3.2)
+subject:statuteCountryName (OID: 1.3.6.1.4.1.53087.3.2)
 +
-*Required* if the Certificate contains a Mark verified in accordance with <<_government_mark_verification>>; *Prohibited* otherwise
+*Required* if the subject:markType field contains "Government Mark"; *Prohibited* otherwise
 +
 *Contents*: Certificates MUST NOT contain these fields unless they are relevant to the level of the Government Entity or Non-Commercial Entity (International Organization) that established the Government Mark through statute, regulation, treaty, or government action.
 +
-For example, the jurisdiction for a Government Entity or Non-Commercial Entity (International Organization) that operates at the *[.underline]#country#* level MUST include the _statuteCountry_ field but MUST NOT include the _statuteStateOrProvince_ and _statuteLocality_ fields.
+For example, the jurisdiction for a Government Entity or Non-Commercial Entity (International Organization) that operates at the [.underline]#country# level MUST include the _statuteCountry_ field but MUST NOT include the _statuteStateOrProvince_ and _statuteLocality_ fields.
 +
-Similarly, the jurisdiction for the applicable Government Entity or Non-Commercial Entity (International Organization) at the *[.underline]#state or province#* level MUST include both _statuteCountry_ and _statuteStateOrProvince_ fields but MUST NOT include the _statuteLocality_ field. And, the jurisdiction for the applicable Government Entity or Non-Commercial Entity (International Organization) at the *[.underline]#locality#* level MUST include the _statuteCountry_ and _statuteStateOrProvince_ fields, where the state or province regulates the registration of the entities at the locality level, as well as the _statuteLocality_ field.
+Similarly, the jurisdiction for the applicable Government Entity or Non-Commercial Entity (International Organization) at the [.underline]#state or province# level MUST include both _statuteCountry_ and _statuteStateOrProvince_ fields but MUST NOT include the _statuteLocality_ field. And, the jurisdiction for the applicable Government Entity or Non-Commercial Entity (International Organization) at the [.underline]#locality# level MUST include the _statuteCountry_ and _statuteStateOrProvince_ fields, where the state or province regulates the registration of the entities at the locality level, as well as the _statuteLocality_ field.
 +
 _statuteCountry_ field values MUST be specified using the applicable ISO country code.
 +
 _statuteStateOrProvince_ and _statuteLocality_ field values (where applicable) MUST be specified using the full name of the applicable jurisdiction.
 
-. *Certificate field:* _Subject:statuteCitation_ (OID: 1.3.6.1.4.1.53087.3.5)
+. *Certificate field:* subject:statuteCitation (OID: 1.3.6.1.4.1.53087.3.5)
 +
-*Required* if the Certificate contains a Mark verified in accordance with <<_government_mark_verification>>; *Prohibited* otherwise
+*Required* if the subject:markType field contains "Government Mark"; *Prohibited* otherwise
 +
 *Contents:* If the Certificates contains a Mark verified in accordance with <<_government_mark_verification>>, then this field MUST include the official statute, regulation, treaty, or government action by which the Government Mark was granted or claimed, as confirmed by the CA. The field may contain common abbreviations, and SHOULD conform, if possible, to applicable legal guidelines in the jurisdiction for how such official statutes, regulations, or government actions are normally cited (e.g., “The Bluebook: A Uniform System of Citation” or other similar standard system of citation.)
 +
 In addition, the CA MAY include brief explanatory text to assist Relying Parties in locating the official statute, regulation, treaty, or government action by which the Government Mark was granted or claimed.
 
-. *Certificate field:* _Subject:statuteURL_ (OID: 1.3.6.1.4.1.53087.3.6)
+. *Certificate field:* subject:statuteURL (OID: 1.3.6.1.4.1.53087.3.6)
 +
-*Optional* if the Certificate contains a Mark verified in accordance with <<_government_mark_verification>>; *Prohibited* otherwise
+*Optional* if the subject:markType field contains "Government Mark"; *Prohibited* otherwise
 +
-*Contents:* If present, this field MUST contain a HTTP/HTTPS URL where the official statute, regulation, treaty, or government action by which the Government Mark was granted or claimed can be found. *Other Subject Attributes*
+*Contents:* If present, this field MUST contain a HTTP/HTTPS URL where the official statute, regulation, treaty, or government action by which the Government Mark was granted or claimed can be found.
 
+. *Other Subject Attributes*
++
 Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
 
 ===== Subject Information - Root Certificates and Subordinate CA Certificates
@@ -2864,19 +2972,19 @@ By issuing a Subordinate CA Certificate, the CA represents that it followed the 
 ====== Subject Distinguished Name Fields
 
 [loweralpha]
-. *Certificate Field:* subject:commonName (OID 2.5.4.3)
+. *Certificate field:* subject:commonName (OID 2.5.4.3)
 +
 *Required*
 +
 *Contents:* This field MUST be present and the contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate.
 
-. *Certificate Field:* subject:organizationName (OID 2.5.4.10)
+. *Certificate field:* subject:organizationName (OID 2.5.4.10)
 +
 *Required*
 +
 *Contents:* This field MUST be present and the contents MUST contain either the Subject CA's name as verified under <<_initial_identity_validation>>. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name”.
 
-. *Certificate Field:* subject:countryName (OID: 2.5.4.6)
+. *Certificate field:* subject:countryName (OID: 2.5.4.6)
 +
 *Required*
 +
@@ -2890,7 +2998,7 @@ CAs MUST NOT include the nameConstraints extension in Certificates.
 
 ===== Root CA Certificates
 
-A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
+As specified in <<_root_ca_certificate>> (c).
 
 ===== Subordinate CA Certificates
 

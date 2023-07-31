@@ -3,18 +3,63 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
     build_document:
         name: Build Document
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-20.04
         steps:
             -   name: Checkout
                 uses: actions/checkout@v3
             -   name: Build
                 run: |
                     sudo apt update &&
-                    sudo apt install -y asciidoctor ruby-asciidoctor-pdf &&
-                    asciidoctor-pdf docs/VMC-Requirements.adoc
+                    sudo apt install -y asciidoctor ruby-asciidoctor-pdf pandoc &&
+                    asciidoctor-pdf docs/VMC-Requirements.adoc &&
+                    /bin/bash -c "asciidoctor --backend docbook --out-file - docs/VMC-Requirements.adoc | pandoc --from docbook --to docx --output docs/VMC-Requirements.docx" &&
+                    asciidoctor docs/VMC-Requirements.adoc
             -   uses: actions/upload-artifact@v3
                 with:
-                    name: VMC-Requirements.pdf
                     path: |
                         docs/VMC-Requirements.pdf
+                        docs/VMC-Requirements.docx
+                        docs/VMC-Requirements.html
+                    if-no-files-found: 'error'
+    build_diff:
+        name: Build Diff
+        if: github.ref_name != 'main'
+        needs:
+            - build_document
+        runs-on: ubuntu-20.04
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3
+                with:
+                    ref: main
+                    path: vmc-requirements
+            -   name: Checkout diff software
+                uses: actions/checkout@v3
+                with: 
+                    repository: ahus1/asciidoc-diff
+                    ref: f085aa908c963f74472d13bafc2f0fb1054801fe
+                    path: diff
+            -   name: Setup diff
+                run: |
+                    sudo apt update &&
+                    sudo apt install -y asciidoctor npm &&
+                    /bin/bash -c "cd diff && npm install"
+            -   name: Get branch HTML doc
+                uses: actions/download-artifact@v3
+                with:
+                    name: artifact
+                    path: artifact
+            -   name: Build main
+                run: |
+                    asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o diff/bv2-cr1.html
+            -   name: Create diff
+                run: |
+                    mv artifact/VMC-Requirements.html diff/bv2-cr3.html &&
+                    /bin/bash -c "cd diff && npm run diff" &&
+                    mv diff/bv2-diff.html VMC-Requirements_diff.html
+            -   name: Upload diff
+                uses: actions/upload-artifact@v3
+                with:
+                    path:
+                        VMC-Requirements_diff.html
                     if-no-files-found: 'error'
