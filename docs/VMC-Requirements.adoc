@@ -237,7 +237,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Design Mark:* A mark consisting of a graphic design, stylized logo, or image, without words and/or letters. For greater certainty, a “Design Mark” includes marks made up solely of design elements. For Registered Marks, see <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Design Mark.
 
-*Designated Individual:* The person who completes tny of the verification procedures described in <<_additional_f2f_verification_procedure>>.
+*Designated Individual:* The person who completes any of the verification procedures described in <<_additional_f2f_verification_procedure>>.
 
 *DNS CAA Email Contact:* The email address defined in <<_caa_contactemail_property>>.
 
@@ -370,9 +370,9 @@ Modified Registered Trademark Certificate: One type of Common Mark Certificate.
 
 *Registered Domain Name:* A Domain Name that has been registered with a Domain Name Registrar. A Registered Domain Name may also be called an Organizational Domain.
 
-*Registered Agent*: An individual or entity that is: (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
+*Registered Agent:* An individual or entity that is: (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
 
-*Registered Office*: The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
+*Registered Office:* The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
 *Registered Mark Certificate:* One type of Verified Mark Certificate.
 
@@ -1097,7 +1097,7 @@ Such an agreement MUST provide that the Applicant SHALL be obligated under the S
 
 ==== Verification of Signature on Subscriber Agreement and Mark Certificate Requests
 
-Both the Subscriber Agreement and each non-pre-authorized Mark Certificate Request MUST be signed. The Subscriber Agreement MUST be signed by an authorized Contract Signer. The Mark Certificate Request MUST be signed by the Certificate Requester submitting the document, unless the Certificate Request has been pre-authorized in line with <<_pre_authorized_certificate_approver>> of these Requirements. If the Certificate Requester is not also an authorized Certificate Approver, then an authorized Certificate Approver MUST independently approve the Mark Certificate Request. In all cases, applicable signatures MUST be a legally valid and contain an enforceable seal or handwritten signature (for a paper Subscriber Agreement and/or Mark Certificate Request), or a legally valid and enforceable electronic signature (for an electronic Subscriber Agreement and/or VMark Certificate Request), that binds the Applicant to the terms of each respective document.
+Both the Subscriber Agreement and each non-pre-authorized Mark Certificate Request MUST be signed. The Subscriber Agreement MUST be signed by an authorized Contract Signer. The Mark Certificate Request MUST be signed by the Certificate Requester submitting the document, unless the Certificate Request has been pre-authorized in line with <<_pre_authorized_certificate_approver>> of these Requirements. If the Certificate Requester is not also an authorized Certificate Approver, then an authorized Certificate Approver MUST independently approve the Mark Certificate Request. In all cases, applicable signatures MUST be a legally valid and contain an enforceable seal or handwritten signature (for a paper Subscriber Agreement and/or Mark Certificate Request), or a legally valid and enforceable electronic signature (for an electronic Subscriber Agreement and/or Mark Certificate Request), that binds the Applicant to the terms of each respective document.
 
 ===== Verification Requirements 
 
@@ -1568,7 +1568,7 @@ The CA SHALL also retain a screenshot or other record of the Mark Representation
 
 ====== Approved Archive Webpage Sources 
 
-Validations of Mark Representations performed in accordance with <<_verification_of_prior_use_of_mark_for_mininum_period>> SHALL employ one of the following Archive Webpage Sources:
+Validations of Mark Representations performed in accordance with <<_verification_of_prior_use_of_mark_for_minimum_period>> SHALL employ one of the following Archive Webpage Sources:
 
 *	archive.org 
 
@@ -2928,7 +2928,7 @@ The CA SHALL:
 +
 *Required*
 +
-*Contents:* This field MUST contain one of the following values corresponding to the sub-section in <<_mark_verification_in_verified_mark_certificates>> or <<_mark_verification_in_mark_certificates>> that the CA employed to validate the Mark included in the Certificate:
+*Contents:* This field MUST contain one of the following values corresponding to the sub-section in <<_mark_verification_in_verified_mark_certificates>> or <<_mark_verification_in_common_mark_certificates>> that the CA employed to validate the Mark included in the Certificate:
 +
 [%header,cols="1,1"]
 |===
