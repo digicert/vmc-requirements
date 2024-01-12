@@ -2980,6 +2980,17 @@ In addition, the CA MAY include brief explanatory text to assist Relying Parties
 +
 *Contents:* If present, this field MUST contain a HTTP/HTTPS URL where the official statute, regulation, treaty, or government action by which the Government Mark was granted or claimed can be found.
 
+. *Certificate field:* subject:priorUseMarkSourceURL (OID: 1.3.6.1.4.1.53087.5.1)
++
+If the subject:markType field contains “Prior Use Mark”:
++
+* *Optional* if the Common Mark Certificate is issued before April 15, 2025
+* *Required* if the Common Mark Certificate is issued on or after April 15, 2025
++
+If the subject:markType field does not contain "Prior Use Mark”, then this field is *Prohibited*.
++
+*Contents:* This field MUST contain the URL where the Mark Representation included in the Mark Certificate was located by the CA during the verification process.
+
 . *Other Subject Attributes*
 +
 Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
