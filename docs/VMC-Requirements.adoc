@@ -1,6 +1,6 @@
-= Minimum Security Requirements for Issuance of Verified Mark Certificates
-Verified Mark Certificate Requirements Authors
-1.5, July 14, 2023
+= Minimum Security Requirements for Issuance of Mark Certificates
+Mark Certificate Requirements Authors
+1.6, February XX, 2024
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -13,21 +13,32 @@ Verified Mark Certificate Requirements Authors
 
 === Overview
 
-This document describes an integrated set of technologies, protocols, and identity and mark proofing requirements that are necessary for the issuance and management of Verified Mark Certificates (VMCs) - certificates that are trusted by Consuming Entities. Upon adoption, they are mandatory for Certification Authorities who issue or plan to issue Verified Mark Certificates.
+This document describes an integrated set of technologies, protocols, and identity and mark proofing requirements that are necessary for the issuance and management of Mark Certificates (MCs) - certificates that are trusted by Consuming Entities. Upon adoption, they are mandatory for Certification Authorities who issue or plan to issue Mark Certificates.
 
-VMCs assert a cryptographically verifiable and auditable binding between an identity, a logo, and a domain. The key pair of an end entity VMC is unused, and there are no requirements around the generation, storage, and protection of such key pairs. In particular, Certification Authorities MAY generate such key pairs on behalf of their customers, and VMCs need not be revoked if the unused key pair is compromised.
+MCs assert a cryptographically verifiable and auditable binding between an identity, a logo, and a domain. The key pair of an end entity MC is unused, and there are no requirements around the generation, storage, and protection of such key pairs. In particular, Certification Authorities MAY generate such key pairs on behalf of their customers, and MCs need not be revoked if the unused key pair is compromised.
 
-VMCs present Consuming Entities and Relying Parties with information about and marks asserted by the Mark Asserting Entity, some of which is gathered from legal documents and government registries (including trademark registries). When Mark Verifying Authorities verify marks presented by a Mark Asserting Entity for inclusion in a VMC, or when Mark Verifying Authorities present VMCs and the information or marks they contain to Consuming Entities, or when Consuming Entities present VMCs and the information or marks they contain to Relying Parties, they are not providing legal advice to any party.
+MCs present Consuming Entities and Relying Parties with information about and marks asserted by the Mark Asserting Entity, some of which is gathered from legal documents and government registries (including trademark registries). When Mark Verifying Authorities verify marks presented by a Mark Asserting Entity for inclusion in a MC, or when Mark Verifying Authorities present MCs and the information or marks they contain to Consuming Entities, or when Consuming Entities present MCs and the information or marks they contain to Relying Parties, they are not providing legal advice to any party.
 
-In adopting these Verified Mark Certificate Requirements (VMCR), the AuthIndicators Working Group is not providing legal advice to any party. All parties (Mark Asserting Entities, Mark Verifying Authorities, Consuming Entities and Relying Parties) are advised to consult their own legal counsel on all matters.
+In adopting these Mark Certificate Requirements (MCR), the AuthIndicators Working Group is not providing legal advice to any party. All parties (Mark Asserting Entities, Mark Verifying Authorities, Consuming Entities and Relying Parties) are advised to consult their own legal counsel on all matters.
 
-Mark Verifying Authorities have no legal obligation to issue VMCs to any Mark Asserting Entity. Consuming Entities have no legal obligation to use or display VMCs or the information or marks they contain to any Relying Party, and may choose at their sole discretion not to use or display VMCs (or groups or categories of VMCs) or the information or marks they contain to Relying Parties or to any subset of Relying Parties they may choose.
+Mark Verifying Authorities have no legal obligation to issue MCs to any Mark Asserting Entity. Consuming Entities have no legal obligation to use or display MCs or the information or marks they contain to any Relying Party, and may choose at their sole discretion not to use or display MCs (or groups or categories of MCs) or the information or marks they contain to Relying Parties or to any subset of Relying Parties they may choose.
 
-Verified Mark Certificates may be issued with respect to marks accredited by legislation (such as Registered Marks that are in good standing with a Trademark Office) and which are owned by or licensed to the Applicant. CAs may issue Verified Mark Certificates provided that the CA satisfies the requirements in this document.
+Mark Certificates may be issued with respect to marks accredited by legislation (such as Registered Marks that are in good standing with a Trademark Office) or other types of Marks described herein, and which are claimed, owned by, or licensed to the Applicant. CAs may issue Mark Certificates provided that the CA satisfies the requirements in this document.
 
-All Subscribers/Mark Asserting Entities, Consuming Entities, and Relying Parties are bound by the VMC Terms attached as <<terms-of-use>> according to their terms. CAs who issue Verified Mark Certificates SHALL include the VMC Terms in their applicable Certification Practice Statement.
+All Subscribers/Mark Asserting Entities, Consuming Entities, and Relying Parties are bound by the MC Terms attached as <<terms-of-use>> according to their terms. CAs who issue Mark Certificates SHALL include the MC Terms in their applicable Certification Practice Statement.
 
-Relevant sections of these VMCRs have been synchronized with the following versions of the CA/Browser Forum standards:
+The four types of Mark Certificates included in these MC Requirements are as follows:
+
+*Mark Certificates*
+
+. Common Mark Certificates
+.. Prior Use Mark Certificates
+.. Modified Registered Trademark Certificates
+. Verified Mark Certificates
+.. Registered Mark Certificates
+.. Government Mark Certificates
+
+Relevant sections of these MCRs have been synchronized with the following versions of the CA/Browser Forum standards:
 
 * Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates v1.7.0
 * Guidelines For The Issuance And Management Of Extended Validation Certificates v1.7.2
@@ -36,7 +47,7 @@ This document may be synchronized from time to time with future versions of the 
 
 === Document name and Identification
 
-This document SHALL be known as the Verified Mark Certificate Requirements (or “VMC Requirements” or simply “VMCR”). These VMC Requirements SHALL take effect upon public adoption by one or more Certification Authorities (CAs) that offer Verified Mark Certificates to Subscribers and by one or more Consuming Entities that recognize and utilize the Verified Mark Certificates.
+This document SHALL be known as the Mark Certificate Requirements (or “MC Requirements” or simply “MCR”). These MC Requirements SHALL take effect upon public adoption by one or more Certification Authorities (CAs) that offer Mark Certificates to Subscribers and by one or more Consuming Entities that recognize and utilize the Mark Certificates.
 
 ==== Revisions
 
@@ -53,15 +64,16 @@ This document SHALL be known as the Verified Mark Certificate Requirements (or �
 |1.3 |01-31-2022 |01-31-2022
 |1.4 |03-31-2022 |03-31-2022
 |1.5 |07-15-2023 |07-15-2023
+|1.6 |02-XX-2024 |02-XX-2024
 |===
 
-==== Verified Mark Certificate OIDs
+==== Mark Certificate OIDs
 
-Certificates adhering to these VMC Requirements SHALL be identified by the presence of the VMC policy OID in the Certificate Policies Extension as described in <<_certificate_policy_object_identifier>>.
+Certificates adhering to these MC Requirements SHALL be identified by the presence of the MC policy OID in the Certificate Policies Extension as described in <<_certificate_policy_object_identifier>>.
 
 === PKI Participants
 
-The AuthIndicators Working Group is a voluntary organization that maintains these VMC Requirements. These will be published at https://www.bimigroup.org[www.bimigroup.org].
+The AuthIndicators Working Group is a voluntary organization that maintains these MC Requirements. These will be published at https://www.bimigroup.org[www.bimigroup.org].
 
 ==== Certification Authorities
 
@@ -105,7 +117,7 @@ Other groups that have participated in the development of these Requirements inc
 
 ==== Appropriate Certificate Uses
 
-The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates, and Verified Marks, and Government Marks. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates, and Verified Marks, and Government Marks.
+The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates.
 
 ==== Prohibited Certificate Uses
 
@@ -113,7 +125,7 @@ No Stipulation.
 
 === Policy administration
 
-The Verified Mark Certificate Requirements present criteria established by the AuthIndicators Working Group for use by Certification Authorities when issuing, maintaining, and revoking Verified Mark Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the AuthIndicators Working Group. Because one of the primary beneficiaries of this document is the end user, the AuthIndicators Working Group openly invites anyone to make recommendations and suggestions by email to https://bimigroup.org/contact-us/. AuthIndicators Working Group members value all input, regardless of source, and will seriously consider all such input.
+The Mark Certificate Requirements present criteria established by the AuthIndicators Working Group for use by Certification Authorities when issuing, maintaining, and revoking Mark Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the AuthIndicators Working Group. Because one of the primary beneficiaries of this document is the end user, the AuthIndicators Working Group openly invites anyone to make recommendations and suggestions by email to https://bimigroup.org/contact-us/. AuthIndicators Working Group members value all input, regardless of source, and will seriously consider all such input.
 
 ==== Organization Administering the Document
 
@@ -141,11 +153,11 @@ No stipulation.
 
 *Affiliate:* A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
-*Applicant:* A person, entity, or organization applying for a Verified Mark Certificate, but which has not yet been issued a Verified Mark Certificate, or a person, entity, or organization that currently has a Verified Mark Certificate or Certificates and that is applying for renewal of such Verified Mark Certificate or Certificates or for an additional Verified Mark Certificate or Certificates.
+*Applicant:* A person, entity, or organization applying for a Mark Certificate, but which has not yet been issued a Mark Certificate, or a person, entity, or organization that currently has a Mark Certificate or Certificates and that is applying for renewal of such Mark Certificate or Certificates or for an additional Mark Certificate or Certificates.
 
 *Applicant Representative:*A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
 
-*Application Software Supplier:* A supplier of relying-party application software that displays or uses Verified Mark Certificates and incorporates Root Certificates.
+*Application Software Supplier:* A supplier of relying-party application software that displays or uses Mark Certificates and incorporates Root Certificates.
 
 *Archive Webpage Sources:* Online public sources that are reliable and that show screen captures of webpages and the date(s) on which the screen captures were made. See Section 3.2.16.2.3.2 for the list of sources allowed by these Requirements.
 
@@ -163,13 +175,13 @@ No stipulation.
 
 *Business Entity*: Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
-*CA*: The Certification Authority that issues a Verified Mark Certificate. Also known as a Mark Verifying Authority.
+*CA*: The Certification Authority that issues a Mark Certificate. Also known as a Mark Verifying Authority.
 
 *CAA:* From RFC 8659 (https://tools.ietf.org/html/rfc8659): “The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify one or more Certification Authorities (CAs) authorized to issue certificates for that domain name. CAA Resource Records allow a public CA to implement additional controls to reduce the risk of unintended certificate mis-issue.”
 
-*Certificate:* A Verified Mark Certificate.
+*Certificate:* A Mark Certificate.
 
-*Certificate Approver*: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve VMC Requests submitted by other Certificate Requesters. The Certificate Approver may also serve as the Designated Individual during the F2F Verification Procedure.
+*Certificate Approver*: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve MC Requests submitted by other Certificate Requesters. The Certificate Approver may also serve as the Designated Individual during the F2F Verification Procedure.
 
 *Certificate Data:* Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
 
@@ -181,7 +193,7 @@ No stipulation.
 
 *Certificate Profile:* A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with <<_certificate_crl_and_ocsp_profiles>> of these Requirements, e.g., a Section in a CA's CPS or a certificate template file used by CA software.
 
-*Certificate Requester*: A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits a VMC Certificate Request on behalf of the Applicant.
+*Certificate Requester*: A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits a MC Certificate Request on behalf of the Applicant.
 
 *Certificate Revocation List:* A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
@@ -191,15 +203,17 @@ No stipulation.
 
 *Combined Mark*: A mark consisting of a graphic design, stylized logo, or image, with words and/or letters having a particular stylized appearance. For greater certainty, a “Combined Mark” includes marks made up of both word and design elements. See <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Combined Mark.
 
-*Common Law Mark:* A mark or logo used by an Applicant/Subscriber which the Applicant/Subscriber asserts a right to use under common law (or equivalent in civil law countries).  The Common Law mark may or may not also be a Registered Mark. 
+*Common Mark:* A mark or logo used by an Applicant/Subscriber which the Applicant/Subscriber asserts a right to use under common law (or equivalent in civil law countries).  The Common Mark may or may not also be a Registered Mark. 
+
+*Common Mark Certificate:* A Mark Certificate that is either a Prior Use Mark Certificate or a Modified Registered Trademark Certificate. 
 
 *Confirmation Request*: An appropriate out-of-band communication requesting verification or confirmation of the particular fact at issue.
 
 *Confirming Person*: A position within an Applicant's organization that confirms the particular fact at issue.
 
-*Conflicting Trademark Owner:* The owner or licensee of a registered trademark who asserts that the Mark Representation in a Verified Mark Certificate or Mark Certificate is being used in a way that infringes upon the owner's or licensee's registered trademark.
+*Conflicting Trademark Owner:* The owner or licensee of a registered trademark who asserts that the Mark Representation in a Mark Certificate is being used in a way that infringes upon the owner's or licensee's registered trademark.
 
-*Consuming Entity (”CE”):* An entity that incorporates and uses the Mark Representation and related data contained in a Verified Mark Certificate in its products and services in accordance with the VMC Terms. [.underline]# Consuming Entities include mailbox providers.#
+*Consuming Entity (”CE”):* An entity that incorporates and uses the Mark Representation and related data contained in a Mark Certificate in its products and services in accordance with the MC Terms. Consuming Entities include mailbox providers.
 
 *Contract Signer*: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements. The Contract Signer may also serve as the Designated Individual during the F2F Verification Procedure.
 
@@ -209,7 +223,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Country:* Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
 
-*Court Order of Infringement:* A final order from a court of competent jurisdiction or trademark office tribunal (or equivalent) stating that the Mark Representation contained in a Verified Mark Certificate or Mark Certificate improperly infringes the registered trademark of a Conflicting Trademark Owner (with details sufficient to identify the trademark and the owner). 
+*Court Order of Infringement:* A final order from a court of competent jurisdiction or trademark office tribunal (or equivalent) stating that the Mark Representation contained in a Mark Certificate improperly infringes the registered trademark of a Conflicting Trademark Owner (with details sufficient to identify the trademark and the owner). 
 
 *CRL*: Certificate Revocation List as defined in RFC5280. A CRL is a list identifying which certificates are revoked meaning invalid, published periodically by CAs.
 
@@ -223,7 +237,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Design Mark:* A mark consisting of a graphic design, stylized logo, or image, without words and/or letters. For greater certainty, a “Design Mark” includes marks made up solely of design elements. For Registered Marks, see <<mapping-of-mark-terminology>> for mapping of the names used by different trademarks offices to the definition of Design Mark.
 
-*Designated Individual:* The person who completes the F2F Verification Procedure under the provisions of <<_notarization_process_for_document_signed_by_designated_individual>> or <<_web_based_f2f_session_with_designated_individual>>.
+*Designated Individual:* The person who completes tny of the verification procedures described in <<_additional_f2f_verification_procedure>>.
 
 *DNS CAA Email Contact:* The email address defined in <<_caa_contactemail_property>>.
 
@@ -247,7 +261,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Expiry Date:* The “Not After” date in a Certificate that defines the end of a Certificate's validity period.
 
-*F2F Verification Procedure:* Either the Notarization process as specified in <<_notarization_process_for_document_signed_by_designated_individual>>, or the web based F2F session as specified in <<_web_based_f2f_session_with_designated_individual>>, as chosen by the CA.
+*F2F Verification Procedure:* Any of the F2F verification procedures permitted under <<_additional_f2f_verification_procedure>>, as chosen by the CA.
 
 *Fully-Qualified Domain Name:* A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
 
@@ -260,6 +274,8 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 *Government Entity:* A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
 
 *Government Mark:* A Mark or equivalent granted to or claimed by a government organization (or granted to a private organization or other organization) through official statute, regulation, treaty, or government action as it appears or is described in the statute, regulation, treaty, or government action and confirmed by a Mark Verifying Authority using the procedures prescribed in <<_government_mark_verification>>. A Mark that has been registered by a Government Entity as a trademark with a Trademark Office is not considered a “Government Mark”.
+
+*Government Mark Certificate:* One type of Verified Mark Certificate.
 
 *Incorporating Agency*: In the context of a Private Organization, the government agency in the Jurisdiction of Incorporation under whose authority the legal existence of the entity is registered (e.g., the government agency that issues certificates of formation or incorporation). In the context of a Government Entity, the entity that enacts law, regulations, or decrees establishing the legal existence of Government Entities.
 
@@ -291,15 +307,28 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Mark:* A Combined Mark, Design Mark, or Word Mark. Such Marks may either be (1) registered with a Trademark Office (Registered Mark) or created through government action (Government Mark); or (2) a mark or logo which qualifies to be included in a Mark Certificate.
 
-*Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Verified Mark Certificate or a Mark Certificate. May be the same as the Applicant and/or Subscriber.
+*Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Mark Certificate. May be the same as the Applicant and/or Subscriber.
 
-*Mark Certificate:* A certificate that contains subject information and extensions specified in these VMC Requirements and that has been verified and issued by a MVA in accordance with these VMC Requirements but whose Mark is not a Registered Mark or a Government Mark.
+*Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements but whose Mark is not a Registered Mark or a Government Mark.
 
 *Mark Representation:* A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under <<_subscriber_certificate>>.
 
-*Mark Verifying Authority (“MVA”):* The authority who issues a Verified Mark Certificate or Mark Certificate. Also referred to as a Certification Authority or CA.
+*Mark Verifying Authority (“MVA”):* The authority who issues a Mark Certificate or Mark Certificate. Also referred to as a Certification Authority or CA.
 
-*Maximum Validity Period*: 1. The maximum time period for which the issued VMC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a VMC pursuant to these Requirements.
+*Maximum Validity Period*: 1. The maximum time period for which the issued MC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a MC pursuant to these Requirements.
+
+*MC Authority:* A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the MC Certificate Request, to take the Request actions described in these Requirements.
+
+*MC Certificate Request:* A request from an Applicant to the CA requesting that the CA issue an MC Certificate to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
+
+*MC Mark:* The Mark Representation and Word Mark, if any, contained in a MAE's Mark Certificate application.
+
+*MCR:* These MC Requirements.
+
+*MC Marks:* Any Mark permitted in a Mark Certificate by the Mark Certificate Requirements.
+
+*MC Terms:* The terms of use that apply to an MC Certificate and to the Mark Representation and related data contained in a Mark Certificate, as set out in <<terms-of-use>> to these MC Requirements.
+Modified Registered Trademark Certificate: One type of Common Mark Certificate.
 
 *Notary*: A notary (or legal equivalent in the applicable jurisdiction), Latin Notary, lawyer, solicitor, or other person or organization in the jurisdiction where the Contract Signer or Certificate Approver (also known as the “Designated Individual”) will be verified whose commission under applicable law includes authority to authenticate the execution of a signature on a document. “Notarize” includes Remote Notarization.
 
@@ -313,15 +342,17 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Parent Company:* A company that Controls a Subsidiary Company.
 
-*Private Key:* The key of a Key Pair that corresponds to the Public Key used by the Subscriber to sign a VMC certificate request. Once the Private Key-Public Key pair has been generated, the Private Key is not used and may be discarded.
+*Private Key:* The key of a Key Pair that corresponds to the Public Key used by the Subscriber to sign a MC certificate request. Once the Private Key-Public Key pair has been generated, the Private Key is not used and may be discarded.
 
 *Place of Business*: The location of any facility (such as a factory, retail store, warehouse, etc) where the Applicant's business is conducted.
 
-*Principal Individual*: An individual of a Private Organization, Government Entity, or Business Entity that is either an owner, partner, managing member, director, or officer, as identified by their title of employment, or an employee, contractor or agent authorized by such entity or organization to conduct business related to the request, issuance, and use of Verified Mark Certificates.
+*Principal Individual*: An individual of a Private Organization, Government Entity, or Business Entity that is either an owner, partner, managing member, director, or officer, as identified by their title of employment, or an employee, contractor or agent authorized by such entity or organization to conduct business related to the request, issuance, and use of Mark Certificates.
+
+*Prior Use Mark Certificate:* One type of Common Mark Certificate.
 
 *Private Organization*: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
-*Public Key:* The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used to generate VMC signing requests for the CA on behalf of the Subscriber.
+*Public Key:* The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used to generate MC signing requests for the CA on behalf of the Subscriber.
 
 *Public Key Infrastructure:* A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
 
@@ -343,9 +374,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Registered Office*: The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
-*Registered Mark:* A Mark that has been registered as a trademark with a Trademark Office, and in particular, as the Mark appears in the official database of the applicable Trademark Office.
-
-*Registered Mark Profile*: Verified Mark Certificates that have been issued following the validation procedures in <<_registered_mark_verification>> and designated by a Certificate General Policy Identifier OID (``1.3.6.1.4.1.53087.1.1``) as described under <<_subordinate_ca_certificate>> and <<_subscriber_certificate>>. These VMCs have a SVG in the logotype extension that contains registered mark and other distinguishing fields noted elsewhere.
+*Registered Mark Certificate:* One type of Verified Mark Certificate.
 
 *Registration Authority (RA):* Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both. When “RA” is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA as stipulated in <<_registration_authorities>>.
 
@@ -357,11 +386,11 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Regulated Financial Institution*: A financial institution that is regulated, supervised, and examined by governmental, national, state or provincial, or local authorities.
 
-*Relying Party:* Any natural or legal person that relies on a VMC or the information or Marks contained in a VMC or displayed to the person by a Consuming Entity. An Application Software Supplier is not considered a Relying Party when software distributed by such Supplier merely displays information relating to a Certificate.
+*Relying Party:* Any natural or legal person that relies on a MC or the information or Marks contained in a MC or displayed to the person by a Consuming Entity. An Application Software Supplier is not considered a Relying Party when software distributed by such Supplier merely displays information relating to a Certificate.
 
 *Remote Notarization:* The process by which a Notary Notarizes a document over a live video/audio link while the Notary and the Contract Signer or Certificate Approver are physically in different locations.
 
-*Repository:* An online database containing publicly-disclosed VMC governance documents (such as Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
+*Repository:* An online database containing publicly-disclosed MC governance documents (such as Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
 *Request Token:* A value, derived in a method specified by the CA which binds this demonstration of control to the certificate request. The CA SHOULD define within its CPS (or a document clearly referenced by the CPS) the format and method of Request Tokens it accepts.
 
@@ -399,7 +428,7 @@ The script outputs:
 
 *Required Website Content:* Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
-*Requirements:* The VMC Requirements found in this document.
+*Requirements:* The MC Requirements found in this document.
 
 *Root CA:* The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
@@ -453,21 +482,11 @@ Both are published by the AuthIndicators Working Group.
 
 *Verified Legal Opinion*: A document meeting the requirements specified in <<_verified_legal_opinion>> of these Requirements.
 
-*Verified Mark Certificate:* A certificate that contains subject information and extensions specified in these VMC Requirements and that has been verified and issued by a CA in accordance with these VMC Requirements. Additionally, the certificate contains a Mark Representation that has been verified as a Registered Mark or Government Mark.
+*Verified Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a CA in accordance with these MC Requirements. Additionally, the certificate contains a Mark Representation that has been verified as a Registered Mark or Government Mark.
 
 *Verified Method of Communication:* The use of a telephone number, a fax number, an email address, or postal delivery address, confirmed by the CA in accordance with <<_verified_method_of_communication>> of the Requirements as a reliable way of communicating with the Applicant.
 
 *Verified Professional Letter*: A Verified Accountant Letter or Verified Legal Opinion.
-
-*VMC Authority*: A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the VMC Certificate Request, to take the Request actions described in these Requirements.
-
-*VMC Certificate Request*: A request from an Applicant to the CA requesting that the CA issue a VMC Certificate to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
-
-*VMC Mark:* The Mark Representation and Word Mark, if any, contained in a MAE's Verified Mark Certificate application.
-
-*VMCR:* These VMC Requirements
-
-*VMC Terms:* The terms of use that apply to a VMC Certificate and to the Mark Representation and related data contained in a Verified Mark Certificate, as set out in <<terms-of-use>> to these VMC Requirements.
 
 *WHOIS:* Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
 
@@ -637,7 +656,7 @@ Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
 ____
-[Name of CA] conforms to the current version of the Verified Mark Certificate Requirements published at https://bimigroup.org. In the event of any inconsistency between this document and those Requirements, those requirements take precedence over this document.
+[Name of CA] conforms to the current version of the Mark Certificate Requirements published at https://bimigroup.org. In the event of any inconsistency between this document and those Requirements, those requirements take precedence over this document.
 ____
 
 === Time or frequency of publication
@@ -680,11 +699,11 @@ No stipulation.
 
 ==== Method to Prove Possession of Private Key
 
-The Public Key contained in Verified Mark Certificates is not used, so CAs are not required to prove possession of the associated Private Key.
+The Public Key contained in Mark Certificates is not used, so CAs are not required to prove possession of the associated Private Key.
 
 ==== Authentication of Organization and Domain Identity
 
-The CA MAY only issue VMC Certificates to Applicants that meet the Private Organization, Government Entity, Business Entity and Non-Commercial Entity requirements specified below.
+The CA MAY only issue MC Certificates to Applicants that meet the Private Organization, Government Entity, Business Entity and Non-Commercial Entity requirements specified below.
 
 ===== Private Organization Subjects
 
@@ -720,26 +739,26 @@ An Applicant qualifies as a Business Entity if:
 
 An Applicant qualifies as a Non-Commercial Entity if:
 
-. The Applicant is an International Organization Entity, created under a charter, treaty, convention or equivalent instrument that was signed by, or on behalf of, more than one country's government. The CA/Browser Forum may publish a listing of Applicants who qualify as an International Organization for Verified Mark eligibility; and
+. The Applicant is an International Organization Entity, created under a charter, treaty, convention or equivalent instrument that was signed by, or on behalf of, more than one country's government. The CA/Browser Forum may publish a listing of Applicants who qualify as an International Organization for Mark eligibility; and
 . The Applicant is not headquartered in any country where the CA is prohibited from doing business or issuing a certificate by the laws of the CA's jurisdiction; and
 . The Applicant is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-Subsidiary organizations or agencies of an entity that qualifies as a Non-Commercial Entity also qualifies for Verified Mark Certificates as a Non-Commercial Entity.
+Subsidiary organizations or agencies of an entity that qualifies as a Non-Commercial Entity also qualifies for Mark Certificates as a Non-Commercial Entity.
 
 ==== Verification Requirements - Overview
 
-Before issuing an Verified Mark Certificate, the CA MUST ensure that all Subject organization information to be included in the VMC conforms to the requirements of, and is verified in accordance with, these Requirements and matches the information confirmed and documented by the CA pursuant to its verification processes. Such verification processes are intended to accomplish the following:
+Before issuing a Mark Certificate, the CA MUST ensure that all Subject organization information to be included in the MC conforms to the requirements of, and is verified in accordance with, these Requirements and matches the information confirmed and documented by the CA pursuant to its verification processes. Such verification processes are intended to accomplish the following:
 
 . Verify Applicant's existence and identity, including;
 .. Verify the Applicant's legal existence and identity (as more fully set forth in <<_initial_identity_validation>> herein),
 .. Verify the Applicant's physical existence (business presence at a physical address), and
 .. Verify the Applicant's operational existence (business activity).
-. Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the Verified Mark Certificate;
+. Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the Mark Certificate;
 . Verify a reliable means of communication with the entity to be named as the Subject in the Certificate;
-. Verify the Applicant's authorization for the Verified Mark Certificate, including:
+. Verify the Applicant's authorization for the Mark Certificate, including:
 .. Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
 .. Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized individual acknowledged and agreed to the Terms of Use; and
-.. Verify that a Certificate Approver has signed or otherwise approved the Verified Mark Certificate Request.
+.. Verify that a Certificate Approver has signed or otherwise approved the Mark Certificate Request.
 
 ==== Acceptable Methods of Verification - Overview
 
@@ -759,7 +778,7 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as “inactive”, “invalid”, “not current”, or the equivalent.
 .. Organization Name
 +
-Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the Verified Mark Certificate Request.
+Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the Mark Certificate Request.
 .. Registration Number
 +
 Obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
@@ -775,7 +794,7 @@ Obtain the identity and address of the Applicant's Registered Agent or Registere
 Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
 .. Entity Name
 +
-Verify that the Applicant's formal legal name matches the Applicant's name in the Verified Mark Certificate Request.
+Verify that the Applicant's formal legal name matches the Applicant's name in the Mark Certificate Request.
 .. Registration Number
 +
 The CA MUST attempt to obtain the Applicant's date of incorporation, registration, or formation, or the identifier for the legislative act that created the Government Entity. In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is a Government Entity.
@@ -788,7 +807,7 @@ The CA MUST attempt to obtain the Applicant's date of incorporation, registratio
 Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
 .. Organization Name
 +
-Verify that the Applicant's formal legal name as recognized by the Registration Agency in the Applicant's Jurisdiction of Registration matches the Applicant's name in the Verified Mark Certificate Request.
+Verify that the Applicant's formal legal name as recognized by the Registration Agency in the Applicant's Jurisdiction of Registration matches the Applicant's name in the Mark Certificate Request.
 .. Registration Number
 +
 Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
@@ -804,7 +823,7 @@ Verify the identity of the identified Principal Individual.
 Verify that the Applicant is a legally recognized International Organization Entity.
 .. Entity Name
 +
-Verify that the Applicant's formal legal name matches the Applicant's name in the Verified Mark Certificate Request.
+Verify that the Applicant's formal legal name matches the Applicant's name in the Mark Certificate Request.
 .. Registration Number
 +
 The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity. In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
@@ -889,13 +908,13 @@ Unless verified under subsection (6), all items listed in <<non-commercial-entit
 .. With reference to the constituent document under which the International Organization was formed; or
 .. Directly with a signatory country's government in which the CA is permitted to do business. Such verification may be obtained from an appropriate government agency or from the laws of that country, or by verifying that the country's government has a mission to represent it at the International Organization; or
 .. Directly against any current list of qualified entities that the AuthIndicators/BIMI Group may maintain at https://bimigroup.org.
-.. In cases where the International Organization applying for the VMC is an organ or agency - including a non-governmental organization of a verified International Organization, then the CA may verify the International Organization Applicant directly with the verified umbrella International Organization of which the Applicant is an organ or agency.
+.. In cases where the International Organization applying for the MC is an organ or agency - including a non-governmental organization of a verified International Organization, then the CA may verify the International Organization Applicant directly with the verified umbrella International Organization of which the Applicant is an organ or agency.
 
 ==== Verification of Applicant's Legal Existence and Identity - Assumed Name
 
 ===== Verification Requirements
 
-If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the Verified Mark Certificate, is to contain any assumed name (also known as “doing business as”, “DBA”, or “d/b/a” in the US, and “trading as” in the UK) under which the Applicant conducts business, the CA MUST verify that:
+If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the Mark Certificate, is to contain any assumed name (also known as “doing business as”, “DBA”, or “d/b/a” in the US, and “trading as” in the UK) under which the Applicant conducts business, the CA MUST verify that:
 
 . the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and
 . that such filing continues to be valid.
@@ -922,10 +941,10 @@ To verify the Applicant's physical existence and business presence, the CA MUST 
 +
 For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and whose Place of Business is NOT the same as that indicated in the relevant Qualified Government Information Source used in <<_verification_of_applicants_legal_existence_and_identity>> to verify legal existence:
 +
-.. For Applicants listed at the same Place of Business address in the current version of either at least one QGIS (other than that used to verify legal existence), QIIS or QTIS, the CA MUST confirm that the Applicant's address, as listed in the Verified Mark Certificate Request, is a valid business address for the Applicant or a Parent/Subsidiary Company by reference to such QGIS, QIIS, or QTIS, and MAY rely on the Applicant's representation that such address is its Place of Business;
-.. For Applicants who are not listed at the same Place of Business address in the current version of either at least one QIIS or QTIS, the CA MUST confirm that the address provided by the Applicant in the Verified Mark Certificate Request is the Applicant's or a Parent/Subsidiary Company's business address, by obtaining documentation of a site visit to the business address, which MUST be performed by a reliable individual or firm. The documentation of the site visit MUST:
+.. For Applicants listed at the same Place of Business address in the current version of either at least one QGIS (other than that used to verify legal existence), QIIS or QTIS, the CA MUST confirm that the Applicant's address, as listed in the Mark Certificate Request, is a valid business address for the Applicant or a Parent/Subsidiary Company by reference to such QGIS, QIIS, or QTIS, and MAY rely on the Applicant's representation that such address is its Place of Business;
+.. For Applicants who are not listed at the same Place of Business address in the current version of either at least one QIIS or QTIS, the CA MUST confirm that the address provided by the Applicant in the Mark Certificate Request is the Applicant's or a Parent/Subsidiary Company's business address, by obtaining documentation of a site visit to the business address, which MUST be performed by a reliable individual or firm. The documentation of the site visit MUST:
 
-... Verify that the Applicant's business is located at the exact address stated in the Verified Mark Certificate Request (e.g., via permanent signage, employee confirmation, etc.),
+... Verify that the Applicant's business is located at the exact address stated in the Mark Certificate Request (e.g., via permanent signage, employee confirmation, etc.),
 
 ... Identify the type of facility (e.g., office in a commercial building, private residence, storefront, etc.) and whether it appears to be a permanent business location,
 ... Indicate whether there is a permanent sign (that cannot be moved) that identifies the Applicant,
@@ -936,7 +955,7 @@ For Applicants whose Place of Business is in the same country as the Applicant's
 
 ... For all Applicants, the CA MAY alternatively rely on a Verified Professional Letter that indicates the address of the Applicant's or a Parent/Subsidiary Company's Place of Business and that business operations are conducted there.
 ... For Government Entity Applicants, the CA MAY rely on the address contained in the records of the QGIS in the Applicant's jurisdiction.
-... For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and where the QGIS used in <<_verification_of_applicants_legal_existence_and_identity>> to verify legal existence contains a business address for the Applicant, the CA MAY rely on the address in the QGIS to confirm the Applicant's or a Parent/Subsidiary Company's address as listed in the Verified Mark Certificate Request, and MAY rely on the Applicant's representation that such address is its Place of Business.
+... For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and where the QGIS used in <<_verification_of_applicants_legal_existence_and_identity>> to verify legal existence contains a business address for the Applicant, the CA MAY rely on the address in the QGIS to confirm the Applicant's or a Parent/Subsidiary Company's address as listed in the Mark Certificate Request, and MAY rely on the Applicant's representation that such address is its Place of Business.
 
 . Place of Business not in the Country of Incorporation or Registration
 +
@@ -985,13 +1004,13 @@ The CA MUST verify the name and title of the Contract Signer and the Certificate
 . Signing Authority of Contract Signer
 +
 The CA MUST verify that the Contract Signer is authorized by the Applicant to enter into the Subscriber Agreement (and any other relevant contractual obligations) on behalf of the Applicant, including a contract that designates one or more Certificate Approvers on behalf of the Applicant.
-. VMC Authority of Certificate Approver
+. MC Authority of Certificate Approver
 +
-The CA MUST verify, through a source other than the Certificate Approver him- or herself, that the Certificate Approver is expressly authorized by the Applicant to do the following, as of the date of the Verified Mark Certificate Request:
+The CA MUST verify, through a source other than the Certificate Approver him- or herself, that the Certificate Approver is expressly authorized by the Applicant to do the following, as of the date of the Mark Certificate Request:
 
-.. Submit, and, if applicable, authorize a Certificate Requester to submit, the Verified Mark Certificate Request on behalf of the Applicant; and
-.. Provide, and, if applicable, authorize a Certificate Requester to provide, the information requested from the Applicant by the CA for issuance of the Verified Mark Certificate; and
-.. Approve Verified Mark Certificate Requests submitted by a Certificate Requester.
+.. Submit, and, if applicable, authorize a Certificate Requester to submit, the Mark Certificate Request on behalf of the Applicant; and
+.. Provide, and, if applicable, authorize a Certificate Requester to provide, the information requested from the Applicant by the CA for issuance of the Mark Certificate; and
+.. Approve Mark Certificate Requests submitted by a Certificate Requester.
 . F2F Verification Procedure
 +
 The CA must conduct a F2F Verification Procedure of the Contract Signer or Certificate Approver for the Applicant following the verification steps described in <<_notarization_process_for_document_signed_by_designated_individual>> or <<_web_based_f2f_session_with_designated_individual>>. If the Notarization process of <<_notarization_process_for_document_signed_by_designated_individual>> is used, the CA must verify that the validator is a legally-qualified Notary (or legal equivalent in the Contract Signer or Certificate Approver's jurisdiction), Latin Notary, lawyer, or solicitor (collectively, “Notary”) in the jurisdiction where the Contract Signer or Certificate Approver is verified.
@@ -1016,39 +1035,39 @@ The CA MAY also verify the agency of the Certificate Approver via a certificatio
 
 ===== Acceptable Methods of Verification - Authority
 
-Acceptable methods of verification of the Signing Authority of the Contract Signer, and the VMC Authority of the Certificate Approver, as applicable, include:
+Acceptable methods of verification of the Signing Authority of the Contract Signer, and the MC Authority of the Certificate Approver, as applicable, include:
 
 . Corporate Resolution:
 +
-The Signing Authority of the Contract Signer, and/or the VMC Authority of the Certificate Approver, MAY be verified by reliance on a properly authenticated corporate resolution that confirms that the person has been granted such Signing Authority, provided that such resolution is:
+The Signing Authority of the Contract Signer, and/or the MC Authority of the Certificate Approver, MAY be verified by reliance on a properly authenticated corporate resolution that confirms that the person has been granted such Signing Authority, provided that such resolution is:
 .. certified by the appropriate corporate officer (e.g., secretary), and
 .. the CA can reliably verify that the certification was validly signed by such person, and that such person does have the requisite authority to provide such certification;
 
 . Independent Confirmation from Applicant
 +
-The Signing Authority of the Contract Signer, and/or the VMC Authority of the Certificate Approver, MAY be verified by obtaining an Independent Confirmation from the Applicant (as described in <<_independent_confirmation_from_applicant>>);
+The Signing Authority of the Contract Signer, and/or the MC Authority of the Certificate Approver, MAY be verified by obtaining an Independent Confirmation from the Applicant (as described in <<_independent_confirmation_from_applicant>>);
 
 . Contract between CA and Applicant
 +
-The VMC Authority of the Certificate Approver MAY be verified by reliance on a contract between the CA and the Applicant that designates the Certificate Approver with such VMC Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
+The MC Authority of the Certificate Approver MAY be verified by reliance on a contract between the CA and the Applicant that designates the Certificate Approver with such MC Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
 
 . Prior Equivalent Authority
 +
-The signing authority of the Contract Signer, and/or the VMC Authority* of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
+The signing authority of the Contract Signer, and/or the MC Authority* of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
 
-.. Prior Equivalent Authority of a Contract Signer MAY be relied upon for confirmation or verification of the signing authority of the Contract Signer when the Contract Signer has executed a binding contract between the CA and the Applicant with a legally valid and enforceable seal or handwritten signature and only when the contract was executed more than 90 days prior to the Verified Mark Certificate application. The CA MUST record sufficient details of the previous agreement to correctly identify it and associate it with the Verified Mark application. Such details MAY include any of the following:
+.. Prior Equivalent Authority of a Contract Signer MAY be relied upon for confirmation or verification of the signing authority of the Contract Signer when the Contract Signer has executed a binding contract between the CA and the Applicant with a legally valid and enforceable seal or handwritten signature and only when the contract was executed more than 90 days prior to the Mark Certificate application. The CA MUST record sufficient details of the previous agreement to correctly identify it and associate it with the Mark application. Such details MAY include any of the following:
 ... Agreement title,
 ... Date of Contract Signer's signature,
 ... Contract reference number, and
 ... Filing location.
 
-.. Prior Equivalent Authority of a Certificate Approver MAY be relied upon for confirmation or verification of the VMC Authority of the Certificate Approver when the Certificate Approver has performed one or more of the following:
+.. Prior Equivalent Authority of a Certificate Approver MAY be relied upon for confirmation or verification of the MC Authority of the Certificate Approver when the Certificate Approver has performed one or more of the following:
 ... Under contract to the CA, has served (or is serving) as an Enterprise RA for the Applicant, or
 ... Has participated in the approval of one or more certificate requests, for certificates issued by the CA and which are currently and verifiably in use by the Applicant. In this case the CA MUST have contacted the Certificate Approver by phone at a previously validated phone number or have accepted a signed and notarized letter approving the certificate request.
 
 . QIIS or QGIS
 +
-The Signing Authority of the Contract Signer, and/or the VMC Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
+The Signing Authority of the Contract Signer, and/or the MC Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
 
 . Contract Signer's Representation/Warranty
 +
@@ -1057,38 +1076,38 @@ Provided that the CA verifies that the Contract Signer is an employee or agent o
 .. That the Applicant authorizes the Contract Signer to sign the Subscriber Agreement on the Applicant's behalf,
 .. That the Subscriber Agreement is a legally valid and enforceable agreement,
 .. That, upon execution of the Subscriber Agreement, the Applicant will be bound by all of its terms and conditions,
-.. That serious consequences attach to the misuse of an Verified Mark certificate, and
+.. That serious consequences attach to the misuse of an Mark certificate, and
 .. The contract signer has the authority to obtain the digital equivalent of a corporate seal, stamp or officer's signature to establish the authenticity of the company's Web site.
 
 ===== Pre-Authorized Certificate Approver
 
-Where the CA and Applicant contemplate the submission of multiple future Verified Mark Certificate Requests, then, after the CA:
+Where the CA and Applicant contemplate the submission of multiple future Mark Certificate Requests, then, after the CA:
 
 . Has verified the name and title of the Contract Signer and that he/she is an employee or agent of the Applicant; and
 . Has verified the Signing Authority of such Contract Signer in accordance with one of the procedures in <<_verification_of_identity_and_authority_of_contract_signer_and_certificate_approver>>.
 
-The CA and the Applicant MAY enter into a written agreement, signed by the Contract Signer on behalf of the Applicant, whereby, for a specified term, the Applicant expressly authorizes one or more Certificate Approver(s) designated in such agreement to exercise VMC Authority with respect to each future Verified Mark Certificate Request submitted on behalf of the Applicant and properly authenticated as originating with, or otherwise being approved by, such Certificate Approver(s).
+The CA and the Applicant MAY enter into a written agreement, signed by the Contract Signer on behalf of the Applicant, whereby, for a specified term, the Applicant expressly authorizes one or more Certificate Approver(s) designated in such agreement to exercise MC Authority with respect to each future Mark Certificate Request submitted on behalf of the Applicant and properly authenticated as originating with, or otherwise being approved by, such Certificate Approver(s).
 
-Such an agreement MUST provide that the Applicant SHALL be obligated under the Subscriber Agreement for all Verified Mark Certificates issued at the request of, or approved by, such Certificate Approver(s) until such VMC Authority is revoked, and MUST include mutually agreed-upon provisions for:
+Such an agreement MUST provide that the Applicant SHALL be obligated under the Subscriber Agreement for all Mark Certificates issued at the request of, or approved by, such Certificate Approver(s) until such MC Authority is revoked, and MUST include mutually agreed-upon provisions for:
 
-. authenticating the Certificate Approver when Verified Mark Certificate Requests are approved,
-. periodic re-confirmation of the VMC Authority of the Certificate Approver,
-. secure procedures by which the Applicant can notify the CA that the VMC Authority of any such Certificate Approver is revoked, and 
+. authenticating the Certificate Approver when Mark Certificate Requests are approved,
+. periodic re-confirmation of the MC Authority of the Certificate Approver,
+. secure procedures by which the Applicant can notify the CA that the MC Authority of any such Certificate Approver is revoked, and 
 . such other appropriate precautions as are reasonably necessary.
 
-==== Verification of Signature on Subscriber Agreement and Verified Mark Certificate Requests
+==== Verification of Signature on Subscriber Agreement and Mark Certificate Requests
 
-Both the Subscriber Agreement and each non-pre-authorized Verified Mark Certificate Request MUST be signed. The Subscriber Agreement MUST be signed by an authorized Contract Signer. The Verified Mark Certificate Request MUST be signed by the Certificate Requester submitting the document, unless the Certificate Request has been pre-authorized in line with <<_pre_authorized_certificate_approver>> of these Requirements. If the Certificate Requester is not also an authorized Certificate Approver, then an authorized Certificate Approver MUST independently approve the Verified Mark Certificate Request. In all cases, applicable signatures MUST be a legally valid and contain an enforceable seal or handwritten signature (for a paper Subscriber Agreement and/or Verified Mark Certificate Request), or a legally valid and enforceable electronic signature (for an electronic Subscriber Agreement and/or Verified Mark Certificate Request), that binds the Applicant to the terms of each respective document.
+Both the Subscriber Agreement and each non-pre-authorized Mark Certificate Request MUST be signed. The Subscriber Agreement MUST be signed by an authorized Contract Signer. The Mark Certificate Request MUST be signed by the Certificate Requester submitting the document, unless the Certificate Request has been pre-authorized in line with <<_pre_authorized_certificate_approver>> of these Requirements. If the Certificate Requester is not also an authorized Certificate Approver, then an authorized Certificate Approver MUST independently approve the Mark Certificate Request. In all cases, applicable signatures MUST be a legally valid and contain an enforceable seal or handwritten signature (for a paper Subscriber Agreement and/or Mark Certificate Request), or a legally valid and enforceable electronic signature (for an electronic Subscriber Agreement and/or VMark Certificate Request), that binds the Applicant to the terms of each respective document.
 
 ===== Verification Requirements 
 
 . Signature
 +
-The CA MUST authenticate the signature of the Contract Signer on the Subscriber Agreement and the signature of the Certificate Requester on each Verified Mark Certificate Request in a manner that makes it reasonably certain that the person named as the signer in the applicable document is, in fact, the person who signed the document on behalf of the Applicant.
+The CA MUST authenticate the signature of the Contract Signer on the Subscriber Agreement and the signature of the Certificate Requester on each Mark Certificate Request in a manner that makes it reasonably certain that the person named as the signer in the applicable document is, in fact, the person who signed the document on behalf of the Applicant.
 
 . Approval Alternative
 +
-In cases where an Verified Mark Certificate Request is signed and submitted by a Certificate Requester who does not also function as a Certificate Approver, approval and adoption of the Verified Mark Certificate Request by a Certificate Approver in accordance with the requirements of <<_verification_of_approval_of_verified_mark_certificate_request>> can substitute for authentication of the signature of the Certificate Requester on such Verified Mark Certificate Request.
+In cases where an Mark Certificate Request is signed and submitted by a Certificate Requester who does not also function as a Certificate Approver, approval and adoption of the Mark Certificate Request by a Certificate Approver in accordance with the requirements of <<_verification_of_approval_of_mark_certificate_request>> can substitute for authentication of the signature of the Certificate Requester on such Mark Certificate Request.
 
 ===== Acceptable Methods of Signature Verification
 
@@ -1099,19 +1118,19 @@ Acceptable methods of authenticating the signature of the Certificate Requester 
 . Use of a signature process that establishes the name and title of the signer in a secure manner, such as through use of an appropriately secure login process that identifies the signer before signing, or through use of a digital signature made with reference to an appropriately verified certificate; or
 . Notarization by a notary, provided that the CA independently verifies that such notary is a legally qualified notary in the jurisdiction of the Certificate Requester or Contract Signer.
 
-==== Verification of Approval of Verified Mark Certificate Request 
+==== Verification of Approval of Mark Certificate Request 
 
 ===== Verification Requirements
 
-In cases where an Verified Mark Certificate Request is submitted by a Certificate Requester, before the CA issues the requested Verified Mark Certificate, the CA MUST verify that an authorized Certificate Approver reviewed and approved the Verified Mark Certificate Request.
+In cases where an Mark Certificate Request is submitted by a Certificate Requester, before the CA issues the requested Mark Certificate, the CA MUST verify that an authorized Certificate Approver reviewed and approved the Mark Certificate Request.
 
 ===== Acceptable Methods of Verification
 
-Acceptable methods of verifying the Certificate Approver's approval of a Verified Mark Certificate Request include:
+Acceptable methods of verifying the Certificate Approver's approval of a Mark Certificate Request include:
 
-. Contacting the Certificate Approver using a Verified Method of Communication for the Applicant and obtaining oral or written confirmation that the Certificate Approver has reviewed and approved the Verified Mark Certificate Request;
-. Notifying the Certificate Approver that one or more new Verified Mark Certificate Requests are available for review and approval at a designated access-controlled and secure Web site, followed by a login by, and an indication of approval from, the Certificate Approver in the manner required by the Web site; or
-. Verifying the signature of the Certificate Approver on the Verified Mark Certificate Request in accordance with <<_verification_of_signature_on_subscriber_agreement_and_verified_mark_certificate_requests>> of these Requirements.
+. Contacting the Certificate Approver using a Method of Communication for the Applicant and obtaining oral or written confirmation that the Certificate Approver has reviewed and approved the Mark Certificate Request;
+. Notifying the Certificate Approver that one or more new Mark Certificate Requests are available for review and approval at a designated access-controlled and secure Web site, followed by a login by, and an indication of approval from, the Certificate Approver in the manner required by the Web site; or
+. Verifying the signature of the Certificate Approver on the Mark Certificate Request in accordance with <<_verification_of_signature_on_subscriber_agreement_and_mark_certificate_requests>> of these Requirements.
 
 ==== Verification of Certain Information Sources
 
@@ -1229,7 +1248,7 @@ If the Third-Party Validator is not a Latin Notary, then the CA MUST confirm the
 
 =====  Independent Confirmation From Applicant
 
-An Independent Confirmation from the Applicant is a confirmation of a particular fact (e.g., confirmation of the employee or agency status of a Contract Signer or Certificate Approver, confirmation of the VMC Authority of a Certificate Approver, etc.) that is:
+An Independent Confirmation from the Applicant is a confirmation of a particular fact (e.g., confirmation of the employee or agency status of a Contract Signer or Certificate Approver, confirmation of the MC Authority of a Certificate Approver, etc.) that is:
 
 . Received by the CA from a Confirming Person (someone other than the person who is the subject of the inquiry) that has the appropriate authority to confirm such a fact, and who represents that he/she has confirmed such fact;
 . Received by the CA in a manner that authenticates and verifies the source of the confirmation; and
@@ -1301,7 +1320,7 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as <<_performing_identification_and_authentication_functions>> of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-CAs SHALL maintain a record of which domain validation method, including relevant VMC Requirements version number, they used to validate every domain.
+CAs SHALL maintain a record of which domain validation method, including relevant MC Requirements version number, they used to validate every domain.
 
 NOTE: FQDNs may be listed in Subscriber Certificates using dNSNames in the subjectAltName extension or in Subordinate CA Certificates via dNSNames in permittedSubtrees within the Name Constraints extension.
 
@@ -1492,7 +1511,7 @@ Confirming the Applicant's control over a FQDN by validating domain control of t
 
 The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
-==== CAA Records for Verified Mark Certificates
+==== CAA Records for Mark Certificates
 
 . As part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each dNSName in the subjectAltName extension of the certificate to be issued, as specified in Subsection (2). If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 +
@@ -1517,92 +1536,31 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 CAs MUST document potential issuances that were prevented by a CAA record and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), If present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 --
 
-. Prior to the issuance of Verified Mark Certificates, the CA MUST check for the publication of a Relevant RRSet for each FQDN to be included in a dNSName within the Verified Mark Certificate's subjectAlternativeName extension. The Relevant RRSet for each FQDN must be determined using the algorithm defined in section 3 of RFC 8659.
+. Prior to the issuance of Mark Certificates, the CA MUST check for the publication of a Relevant RRSet for each FQDN to be included in a dNSName within the Mark Certificate's subjectAlternativeName extension. The Relevant RRSet for each FQDN must be determined using the algorithm defined in section 3 of RFC 8659.
 +
 --
-For each FQDN, if a Relevant RRSet exists, the CA MUST NOT issue the Certificate unless the CA determines that the certificate request is consistent with the Relevant RRSet. If the Relevant RRSet for an FQDN does not contain any Property Tags that restrict issuance of a Verified Mark Certificate and does not contain any unrecognized Property Tags that are marked critical, then the Relevant RRSet does not restrict issuance of a Verified Mark Certificate containing the given FQDN. In particular, CAA records with “issue” and “issuewild” Property Tags do not restrict the issuance of Verified Mark Certificates.
+For each FQDN, if a Relevant RRSet exists, the CA MUST NOT issue the Certificate unless the CA determines that the certificate request is consistent with the Relevant RRSet. If the Relevant RRSet for an FQDN does not contain any Property Tags that restrict issuance of a Mark Certificate and does not contain any unrecognized Property Tags that are marked critical, then the Relevant RRSet does not restrict issuance of a Mark Certificate containing the given FQDN. In particular, CAA records with “issue” and “issuewild” Property Tags do not restrict the issuance of Mark Certificates.
 
 If a CAA record with the “issuevmc” Property Tag is present in the Relevant RRset for an FQDN, it is a request that the CA:
 
 . Perform CAA issue restriction processing for the FQDN, and
-. Grant authorization to issue Verified Mark Certificates containing that FQDN to the holder of the issuer-domain-name or a party acting under the explicit authority of the holder of the issuer-domain-name.
+. Grant authorization to issue Mark Certificates containing that FQDN to the holder of the issuer-domain-name or a party acting under the explicit authority of the holder of the issuer-domain-name.
 
-The sub-syntax of the “issuevmc” Property Tag value is the same as the “issue” Property Tag as defined in section 4.2 of RFC 8659. The semantics of the “issuevmc” Property Tag are similar to the “issue” Property Tag, with the only difference being that the “issuevmc” Property Tag restricts issuance of Verified Mark Certificates as opposed to TLS Server Authentication Certificates.
+The sub-syntax of the “issuevmc” Property Tag value is the same as the “issue” Property Tag as defined in section 4.2 of RFC 8659. The semantics of the “issuevmc” Property Tag are similar to the “issue” Property Tag, with the only difference being that the “issuevmc” Property Tag restricts issuance of Mark Certificates as opposed to TLS Server Authentication Certificates.
 --
 
-==== Mark Verification in Verified Mark Certificates
+==== Mark Verification in Common Mark Certificates
 
-In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Mark as follows:
-
-===== Registered Mark Verification
-
-====== Verification of Mark with Trademark Office
-
-The Subscriber will provide the CA with:
-
- . the Registered Mark's trademark registration number and name of the Trademark Office that granted the trademark registration, and
- . the Mark Representation in SVG format that the Applicant wishes to include in the Verified Mark Certificate. Registered Marks must be in good standing and MUST be verified through consultation with the official database of the applicable Trademark Office, to be eligible for inclusion within a Verified Mark Certificate. In addition, only Registered Marks are eligible for inclusion within the logotype (as defined in RFC3709). For clarity and without limitation, unregistered marks are not eligible as a logotype in the registered mark profile.
-
-In the alternative, the CA MAY verify the Registered Mark through the WIPO Global Brand Database at https://www.wipo.int/reference/en/branddb/.
-
-====== Verification of Registered Mark Ownership or License
-
-The CA SHALL confirm that the owner of the Registered Mark identified in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>> (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements), or if the owner of the Registered Mark is not the same organization, that the Subject organization has obtained the right to use the Registered Mark through a mutually agreed-upon license from the entity who is the owner of record of the Registered Mark (or a Parent, Subsidiary, or Affiliate of the owner). If the owner of a Registered Mark is not the Applicant, the CA SHALL NOT issue a Certificate for the Registered Mark unless the CA obtains an authorization letter from the owner of record of the Registered Mark.  
-
-In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_mark_with_trademark_office>>.
-
-====== Confirmation of Mark Representation
-
-The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor.  The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Registered Trademark with the Mark Representation. 
-
-The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
-
-====== Color Restrictions 
-
-Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Registered Mark by the applicable Trademark Office. The CA SHALL examine the Registered Mark to determine what rights, if any, the Subject organization has to use of the Registered Mark in the colors of the Mark Representation submitted by the Subscriber. 
-
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in 
-<<_verification_of_mark_with_trademark_office>>.
-
-===== Government Mark Verification
-
-VMCs may be issued to Government Entities for Government Marks under the Registered Mark Profile designated by a Certificate General Policy Identifier OID (1.3.6.1.4.1.53087.1.1) as described under <<_subordinate_ca_certificate>> and <<_subscriber_certificate>>. The CA SHALL confirm that a Mark or equivalent was granted to or claimed by a Government Entity or Non-Commercial Entity (International Organization) (or granted to a private organization or other organization by a Government Entity or Non-Commercial Entity [International Organization] through official statute, regulation, treaty, or government action) as it appears or is described in the statute, regulation, treaty, or government action and confirmed by a Mark Verifying Authority.
-
-In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Government Mark as follows:
-
-====== Verification of Statute, Regulation, Treaty, or Action
-
-The CA SHALL confirm that the Government Mark was granted to or claimed by a Government Entity or Non-Commercial Entity (International Organization) (or granted to a private organization or other organization by a Government Entity or Non-Commercial Entity (International Organization) through official statute, regulation, treaty, or government action by confirming the grant or claim in publicly available records of the statute, regulation, treaty, or government action. The CA shall maintain a copy of the statute, regulation, treaty, or government action including all official references (e.g., statute or regulation number and jurisdiction) and a copy of the Mark image as contained in or referenced by the statute or regulation. Example: US Department of the Treasury - Treasury Order 100-01 approving the design of the Treasury seal which accompanies the Order, pursuant to 31 U.S.C. § 301(g).
-
-The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information supporting the verification of the Government Mark obtained from the applicable statute, regulation, treaty, or government action.
-
-====== Verification of Government Mark Ownership or License
-
-The CA SHALL confirm that the owner of the Government Mark confirmed under subsection (1) is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>>, or if the owner of the Government Mark is not the same Subject organization, that the Subject organization has obtained the right to use the Government Mark through statute, regulation, treaty, or government action, or by a mutually agreed-upon license from the entity who is the owner of record of the Government Mark. If the owner of a Government Mark is not the Applicant, the Applicant may only use the Government Mark if the CA obtains an authorization letter from the owner of record of the Government Mark.
-
-In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
-
-====== Confirmation of Mark Representation
-
-The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Government Mark as confirmed with the Mark Representation.
-
-====== Color Restrictions
-
-Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Government Mark by the applicable statute, regulation, treaty, or government action verified by the CA. The CA SHALL examine the Government Mark to determine what rights, if any, the Subject organization has to use of the Government Mark in the colors of the Mark Representation submitted by the Subscriber.
-
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
-
-==== Mark Verification in Mark Certificates
-
-The CA SHALL verify Marks using one of the following methods for use in Mark Certificates.
+The CA SHALL verify Marks using one of the following methods for use in Common Mark Certificates.
 
 ===== Proof of Prior Use
 
 ====== Verification of Prior Use of Mark for Minimum Period
 
-This type of Mark Certificate is appropriate for Common Law Marks that are not Registered Marks.
+This type of Mark Certificate is appropriate for Common Marks that are not Registered Marks.
 
 The Applicant will provide the CA with the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate. The CA SHALL verify that:
+
 . a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the domain name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
 . a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on a domain currently controlled by the applicant, where the historical display is verified via one of the Archive Webpage Sources allowed by these Requirements.
 
@@ -1669,6 +1627,68 @@ _Logo_
 [.big]#N# amed
 [.big]#C# ompany
 |===
+==== Mark Verification in Verified Mark Certificates
+
+In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Mark as follows:
+
+===== Registered Mark Verification
+
+====== Verification of Mark with Trademark Office
+
+The Subscriber will provide the CA with:
+
+ . the Registered Mark's trademark registration number and name of the Trademark Office that granted the trademark registration, and
+ . the Mark Representation in SVG format that the Applicant wishes to include in the Verified Mark Certificate. Registered Marks must be in good standing and MUST be verified through consultation with the official database of the applicable Trademark Office, to be eligible for inclusion within a Verified Mark Certificate. In addition, only Registered Marks are eligible for inclusion within the logotype (as defined in RFC3709). For clarity and without limitation, unregistered marks are not eligible as a logotype in the registered mark profile.
+
+In the alternative, the CA MAY verify the Registered Mark through the WIPO Global Brand Database at https://www.wipo.int/reference/en/branddb/.
+
+====== Verification of Registered Mark Ownership or License
+
+The CA SHALL confirm that the owner of the Registered Mark identified in the official database of the applicable Trademark Office or the WIPO Global Brand Database is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>> (or to a Parent, Subsidiary, or Affiliate of the organization as confirmed in accordance with the Verified Mark Requirements), or if the owner of the Registered Mark is not the same organization, that the Subject organization has obtained the right to use the Registered Mark through a mutually agreed-upon license from the entity who is the owner of record of the Registered Mark (or a Parent, Subsidiary, or Affiliate of the owner). If the owner of a Registered Mark is not the Applicant, the CA SHALL NOT issue a Certificate for the Registered Mark unless the CA obtains an authorization letter from the owner of record of the Registered Mark.  
+
+In determining whether the Applicant is the owner or a licensee of the Registered Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_mark_with_trademark_office>>.
+
+====== Confirmation of Mark Representation
+
+The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor.  The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Registered Trademark with the Mark Representation. 
+
+The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
+
+====== Color Restrictions 
+
+Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Registered Mark by the applicable Trademark Office. The CA SHALL examine the Registered Mark to determine what rights, if any, the Subject organization has to use of the Registered Mark in the colors of the Mark Representation submitted by the Subscriber. 
+
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the Registered Mark registration, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in 
+<<_verification_of_mark_with_trademark_office>>.
+
+===== Government Mark Verification
+
+VMCs may be issued to Government Entities for Government Marks under the Registered Mark Profile designated by a Certificate General Policy Identifier OID (1.3.6.1.4.1.53087.1.1) as described under <<_subordinate_ca_certificate>> and <<_subscriber_certificate>>. The CA SHALL confirm that a Mark or equivalent was granted to or claimed by a Government Entity or Non-Commercial Entity (International Organization) (or granted to a private organization or other organization by a Government Entity or Non-Commercial Entity [International Organization] through official statute, regulation, treaty, or government action) as it appears or is described in the statute, regulation, treaty, or government action and confirmed by a Mark Verifying Authority.
+
+In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Government Mark as follows:
+
+====== Verification of Statute, Regulation, Treaty, or Action
+
+The CA SHALL confirm that the Government Mark was granted to or claimed by a Government Entity or Non-Commercial Entity (International Organization) (or granted to a private organization or other organization by a Government Entity or Non-Commercial Entity (International Organization) through official statute, regulation, treaty, or government action by confirming the grant or claim in publicly available records of the statute, regulation, treaty, or government action. The CA shall maintain a copy of the statute, regulation, treaty, or government action including all official references (e.g., statute or regulation number and jurisdiction) and a copy of the Mark image as contained in or referenced by the statute or regulation. Example: US Department of the Treasury - Treasury Order 100-01 approving the design of the Treasury seal which accompanies the Order, pursuant to 31 U.S.C. § 301(g).
+
+The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information supporting the verification of the Government Mark obtained from the applicable statute, regulation, treaty, or government action.
+
+====== Verification of Government Mark Ownership or License
+
+The CA SHALL confirm that the owner of the Government Mark confirmed under subsection (1) is the same Subject organization verified by the Verified Mark vetting process under <<_initial_identity_validation>>, or if the owner of the Government Mark is not the same Subject organization, that the Subject organization has obtained the right to use the Government Mark through statute, regulation, treaty, or government action, or by a mutually agreed-upon license from the entity who is the owner of record of the Government Mark. If the owner of a Government Mark is not the Applicant, the Applicant may only use the Government Mark if the CA obtains an authorization letter from the owner of record of the Government Mark.
+
+In determining whether the Applicant is the owner or a licensee of the Government Mark corresponding to the Mark Representation, the CA SHALL maintain a record of its decisions and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
+
+====== Confirmation of Mark Representation
+
+The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Government Mark as confirmed with the Mark Representation.
+
+====== Color Restrictions
+
+Mark Representations in Verified Mark Certificates for Combined Marks and Design Marks SHALL only be in colors as permitted for the Government Mark by the applicable statute, regulation, treaty, or government action verified by the CA. The CA SHALL examine the Government Mark to determine what rights, if any, the Subject organization has to use of the Government Mark in the colors of the Mark Representation submitted by the Subscriber.
+
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the statute, regulation, treaty, or government action verified by the CA, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_statute_regulation_treaty_or_action>>.
+
 
 ====  Other Verification Requirements
 
@@ -1681,7 +1701,7 @@ The CA MUST verify whether the Applicant, the Contract Signer, the Certificate A
 . Is identified on any government denied list, list of prohibited persons, or other list that prohibits doing business with such organization or person under the laws of the country of the CA's jurisdiction(s) of operation; or
 . Has its Jurisdiction of Incorporation, Registration, _or_ Place of Business in any country with which the laws of the CA's jurisdiction prohibit doing business.
 
-The CA MUST NOT issue any Verified Mark Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
+The CA MUST NOT issue any Mark Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
 
 ====== Acceptable Methods of Verification
 
@@ -1706,7 +1726,7 @@ The relationship between the Applicant and the Parent, Subsidiary, or Affiliate 
 A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by obtaining an Independent Confirmation from the appropriate Parent, Subsidiary, or Affiliate (as described in <<_verified_accountant_letter>>);
 . Contract between CA and Parent, Subsidiary, or Affiliate
 +
-A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by relying on a contract between the CA and the Parent, Subsidiary, or Affiliate that designates the Certificate Approver with such VMC Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
+A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by relying on a contract between the CA and the Parent, Subsidiary, or Affiliate that designates the Certificate Approver with such MC Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
 . Corporate Resolution
 +
 A CA MAY verify the relationship between an Applicant and a Subsidiary by relying on a properly authenticated corporate resolution that approves creation of the Subsidiary or the Applicant, provided that such resolution is:
@@ -1715,9 +1735,9 @@ A CA MAY verify the relationship between an Applicant and a Subsidiary by relyin
 
 ====  Final Cross-Correlation and Due Diligence
 
-. The results of the verification processes and procedures outlined in these Requirements are intended to be viewed both individually and as a group. Thus, after all of the verification processes and procedures are completed, the CA MUST have a second Validation Specialist who is not responsible for the collection of information review all of the information and documentation assembled in support of the Verified Mark Certificate application and look for discrepancies or other details requiring further explanation.
+. The results of the verification processes and procedures outlined in these Requirements are intended to be viewed both individually and as a group. Thus, after all of the verification processes and procedures are completed, the CA MUST have a second Validation Specialist who is not responsible for the collection of information review all of the information and documentation assembled in support of the Mark Certificate application and look for discrepancies or other details requiring further explanation.
 . The CA MUST obtain and document further explanation or clarification from the Applicant, Certificate Approver, Certificate Requester, Qualified Independent Information Sources, and/or other sources of information, as necessary, to resolve those discrepancies or details that require further explanation.
-. The CA MUST refrain from issuing a Verified Mark Certificate until the entire corpus of information and documentation assembled in support of the Verified Mark Certificate Request is such that issuance of the Verified Mark Certificate will not communicate factual information that the CA knows, or the exercise of due diligence should discover from the assembled information and documentation, to be inaccurate, If satisfactory explanation and/or additional documentation are not received within a reasonable time, the CA MUST decline the Verified Mark Certificate Request and SHOULD notify the Applicant accordingly.
+. The CA MUST refrain from issuing a Mark Certificate until the entire corpus of information and documentation assembled in support of the Mark Certificate Request is such that issuance of the Mark Certificate will not communicate factual information that the CA knows, or the exercise of due diligence should discover from the assembled information and documentation, to be inaccurate, If satisfactory explanation and/or additional documentation are not received within a reasonable time, the CA MUST decline the Mark Certificate Request and SHOULD notify the Applicant accordingly.
 . In the case where some or all of the documentation used to support the application is in a language other than the CA's normal operating language, the CA or its Affiliate MUST perform the requirements of this Final Cross-Correlation and Due Diligence section using employees under its control and having appropriate training, experience, and judgment in confirming organizational identification and authorization and fulfilling all qualification requirements contained in <<_personnel_controls>> of these Requirements. When employees under the control of the CA do not possess the language skills necessary to perform the Final Cross-Correlation and Due Diligence a CA MAY rely* on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator.
 
 ==== Criteria for Interoperation or Certification
@@ -1773,9 +1793,9 @@ Applicant information MUST include, but not be limited to, at least one Fully-Qu
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
-As an exception to the validation reuse period of 398 days defined above, face-to-face validation is not required more than once for any Subscriber Organization (or Parent, Subsidiary, or Affiliate) so long as the CA has maintained continuous contact with one or more Subscriber representatives and maintains a system for authorization by the Subscriber of new Subscriber representatives (or representatives of a Parent, Subsidiary, or Affiliate).  “Continuous contact” means the CA has one or more direct contacts with a Subscriber representative during the validity period of any VMC issued to the Subscriber or within 90 days of the expiration of the last of the Subscriber's VMC to expire.
+As an exception to the validation reuse period of 398 days defined above, face-to-face validation is not required more than once for any Subscriber Organization (or Parent, Subsidiary, or Affiliate) so long as the CA has maintained continuous contact with one or more Subscriber representatives and maintains a system for authorization by the Subscriber of new Subscriber representatives (or representatives of a Parent, Subsidiary, or Affiliate).  “Continuous contact” means the CA has one or more direct contacts with a Subscriber representative during the validity period of any MC issued to the Subscriber or within 90 days of the expiration of the last of the Subscriber's MC to expire.
 
-After the change to any validation method specified in the Verified Mark Requirements, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this section unless otherwise specifically provided in these Requirements.
+After the change to any validation method specified in the Mark Certificate Requirements, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this section unless otherwise specifically provided in these Requirements.
 
 ==== Approval or Rejection of Certificate Applications
 
@@ -1791,7 +1811,7 @@ No stipulation.
 
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
 
-Before issuance of a Verified Mark Certificate, the CA SHALL log the Verified Mark Certificate pre-certificate (including all the data included in the Subject field of the certificate plus the Mark Representation) to one or more public CT logs. The list of CT logs that are acceptable for the fulfillment of this requirement is found in <<_ct_logs_approved_by_authindicators_working_group>>.
+Before issuance of a Mark Certificate, the CA SHALL log the Mark Certificate pre-certificate (including all the data included in the Subject field of the certificate plus the Mark Representation) to one or more public CT logs. The list of CT logs that are acceptable for the fulfillment of this requirement is found in <<_ct_logs_approved_by_authindicators_working_group>>.
 
 ==== Notification of Certificate Issuance
 
@@ -1895,8 +1915,8 @@ No stipulation.
 
 The CA may rely on a previously verified certificate request to issue a replacement certificate, so long as the certificate being referenced was not revoked due to fraud or other illegal conduct, if:
 
-. The expiration date of the replacement certificate is the same as the expiration date of the VMC that is being replaced, and
-. The Subject Information of the Certificate is the same as the Subject in the VMC that is being replaced.
+. The expiration date of the replacement certificate is the same as the expiration date of the MC that is being replaced, and
+. The Subject Information of the Certificate is the same as the Subject in the MC that is being replaced.
 
 ==== Notification of new certificate issuance to subscriber
 
@@ -1937,7 +1957,7 @@ The CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate
 . The CA determines or is made aware that any of the information appearing in the Certificate is inaccurate;
 . The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
 . Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement.
-. The CA receives a Court Order of Infringement, confirms the authenticity of the Court Order of Infringement, and provides 3 business days' notice to the Subscriber that the VMC or MC will be revoked.
+. The CA receives a Court Order of Infringement, confirms the authenticity of the Court Order of Infringement, and provides 3 business days' notice to the Subscriber that the MC will be revoked.
 
 ===== Reasons for Revoking a Subordinate CA Certificate
 
@@ -2555,9 +2575,9 @@ No stipulation.
 
 === Certificate profile
 
-Verified Mark Certificates SHALL comply with the Verified Mark Certificate profile requirements set out in this section.
+Mark Certificates SHALL comply with the Mark Certificate profile requirements set out in this section.
 
-CAs SHALL only issue Verified Mark Certificates from a dedicated sub-CA that contains the EKU specified in <<_subordinate_ca_certificate>> (f).
+CAs SHALL only issue Mark Certificates from a dedicated sub-CA that contains the EKU specified in <<_subordinate_ca_certificate>> (f).
 
 The CA SHALL also meet the technical requirements set forth in <<_publication_of_information>>, <<_algorithm_type_and_key_sizes>> and <<_public_key_parameters_generation_and_quality_checking>>.
 
@@ -2597,8 +2617,8 @@ This extension MUST be present and SHOULD NOT be marked critical.
 The CA MUST include Certificate Policy OIDs in Subordinate CA Certificates, as specified from one of the following two options:
 +
 . Both of the following OIDs, as specified:
-.. The first certificate policies value contains an identifier that names the CA's Certification Practice Statement (CPS) applicable to the Verified Mark Certificate, together with a URL for the web page where the Certification Practice Statement can be publicly reviewed. The CA CPS identifier is the Policy Identifier of the certificate policies extension. The CA CPS URL is appended as a CPS pointer qualifier.
-.. The second certificate policies value contains a Verified Mark Certificate General Policy Identifier (1.3.6.1.4.1.53087.1.1) which indicatesadherence to and compliance with these VMC Requirements and the VMC Terms. This identifier is assigned to thePolicy Identifier of the certificate policies extension.
+.. The first certificate policies value contains an identifier that names the CA's Certification Practice Statement (CPS) applicable to the Mark Certificate, together with a URL for the web page where the Certification Practice Statement can be publicly reviewed. The CA CPS identifier is the Policy Identifier of the certificate policies extension. The CA CPS URL is appended as a CPS pointer qualifier.
+.. The second certificate policies value contains a Mark Certificate General Policy Identifier (1.3.6.1.4.1.53087.1.1) which indicates adherence to and compliance with these MC Requirements and the MC Terms. This identifier is assigned to thePolicy Identifier of the certificate policies extension.
 . anyPolicy (2.5.29.32.0). The anyPolicy Policy OID MUST NOT be included if the Subordinate CA is not controlled by the Root CA.
 
 . *cRLDistributionPoints*
@@ -2615,7 +2635,7 @@ This extension MUST be present and MUST be marked critical. The cA field MUST be
 This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 . *extkeyUsage*
 +
-The Extended Key Usage extension [RFC5280] MUST be present and MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Verified Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This extension SHOULD be marked non-critical.
+The Extended Key Usage extension [RFC5280] MUST be present and MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This extension SHOULD be marked non-critical.
 
 ===== Subscriber Certificate
 
@@ -2626,18 +2646,18 @@ This extension MUST be present and SHOULD NOT be marked critical.
 +
 ``certificatePolicies:policyIdentifier`` (Required)
 +
-Each Verified Mark Certificate issued by the CA to a Subscriber SHALL be identified by the presence of the following Verified Mark Certificate OIDs in the certificate's certificatePolicies extension that:
+Each Mark Certificate issued by the CA to a Subscriber SHALL be identified by the presence of the following Mark Certificate OIDs in the certificate's certificatePolicies extension that:
 +
 []
 --
 . indicate which CA policy statement relates to that Certificate,
-. assert the CA's adherence to and compliance with these VMC Requirements and assert the requirement of adherence to and compliance with the VMC Terms as a condition of issuance of the Verified Mark Certificate.
+. assert the CA's adherence to and compliance with these MC Requirements and assert the requirement of adherence to and compliance with the MC Terms as a condition of issuance of the Mark Certificate.
 --
 
 +
-The first certificate policies value contains an identifier that names the CA's Certification Practice Statement (CPS) applicable to the Verified Mark Certificate, together with a URL for the web page where the Certification Practice Statement can be publicly reviewed. The CA CPS identifier is the Policy Identifier of the certificate policies extension. The CA CPS URL is appended as a CPS pointer qualifier.
+The first certificate policies value contains an identifier that names the CA's Certification Practice Statement (CPS) applicable to the Mark Certificate, together with a URL for the web page where the Certification Practice Statement can be publicly reviewed. The CA CPS identifier is the Policy Identifier of the certificate policies extension. The CA CPS URL is appended as a CPS pointer qualifier.
 +
-The second certificate policies value contains a Verified Mark Certificate General Policy Identifier (1.3.6.1.4.1.53087.1.1) which indicatesadherence to and compliance with these VMC Requirements and the VMC Terms. This identifier is assigned to thePolicy Identifier of the certificate policies extension.
+The second certificate policies value contains a Mark Certificate General Policy Identifier (1.3.6.1.4.1.53087.1.1) which indicates adherence to and compliance with these MC Requirements and the MC Terms. This identifier is assigned to thePolicy Identifier of the certificate policies extension.
 . *cRLDistributionPoints*
 +
 This extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
@@ -2653,10 +2673,10 @@ This extension is optional. If present, the cA field MUST NOT be true.
 This extension is optional. If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
 . *extKeyUsage (required)*
 +
-The Extended Key Usage extension [RFC5280] MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Verified Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This is REQUIRED, and the extension SHOULD be marked non-critical.
+The Extended Key Usage extension [RFC5280] MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This is REQUIRED, and the extension SHOULD be marked non-critical.
 . *signedCertificateTimestampList (OID: 1.3.6.1.4.1.11129.2.4.2)*
 +
-Verified Mark Certificates pre-certificates MUST be logged to at least one of well-known Certificate Transparency (CT) logs [RFC6962] which then provide Signed Certificate Timestamps (SCT). The SCT must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
+Mark Certificates pre-certificates MUST be logged to at least one of well-known Certificate Transparency (CT) logs [RFC6962] which then provide Signed Certificate Timestamps (SCT). The SCT must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
 
 . *logotype extension (OID: 1.3.6.1.5.5.7.1.12)*
 +
@@ -2664,7 +2684,7 @@ The extension MUST:
 +
 []
 --
-. contain subjectLogo with a LogotypeData element [RFC3709] containing the Mark Representation asserted by the Subject of the Verified Mark Certificate and verified by the CA. 
+. contain subjectLogo with a LogotypeData element [RFC3709] containing the Mark Representation asserted by the Subject of the Mark Certificate and verified by the CA. 
 . embed the image element in “data:” URL as defined in RFC6170 section 4.
 --
 +
@@ -2678,7 +2698,7 @@ The Mark Representation MUST:
 . follow other requirements set forth in [RFC6170 section 5.2]
 --
 +
-The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the AuthIndicators Working Group has published a SVG Tiny PS Guidelines document as well as a RNC tool to help validate the SVG. The VMC SVG is also required to follow those specifications. The logotype extension is REQUIRED, and SHOULD be marked non-critical. The CA SHALL verify that the Applicant provided Mark Representation meets this secure profile.
+The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the AuthIndicators Working Group has published a SVG Tiny PS Guidelines document as well as a RNC tool to help validate the SVG. The MC SVG is also required to follow those specifications. The logotype extension is REQUIRED, and SHOULD be marked non-critical. The CA SHALL verify that the Applicant provided Mark Representation meets this secure profile.
 . *Pilot identifier extension (OID: 1.3.6.1.4.1.53087.4.1)*
 +
 The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
@@ -2749,7 +2769,7 @@ When abbreviating a Subject's full legal name as allowed by this subsection, the
 +
 In addition, an assumed name or DBA name used by the Subject MAY be included at the beginning of this field, provided that it is followed by the full legal organization name in parenthesis.
 +
-If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with <<_authentication_of_organization_and_domain_identity>> and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the Verified Mark Certificate.
+If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with <<_authentication_of_organization_and_domain_identity>> and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the Mark Certificate.
 
 . *Certificate field:* subject:streetAddress (OID: 2.5.4.9)
 +
@@ -2834,8 +2854,8 @@ For Business Entities, the Registration Number that was received by the Business
 []
 +
 --
-. This information SHALL be validated by matching the organization name and registration number found in the Global LEI Index against the Subject Organization Name Field (see Verified Mark Requirements  (b)) and Subject Serial Number Field (see <<_subject_distinguished_name_fields>> (k)) within the context of the subject's jurisdiction as specified in <<_subject_distinguished_name_fields>> (j)) The address information from Verified Mark validation SHALL be compared to the Headquarters Address information in the LEI record in order to detect potential matching errors or errors in the registration information. If the addresses do not match, the CA will attempt to validate the address found in the LEI record as a confirmed office location for the Subscriber, if possible.
-. The CA SHALL verify that the ValidationSources field of the associated LEI record contains the designation FULLY_CORROBORATED before including an LEI in a VMC.
+. This information SHALL be validated by matching the organization name and registration number found in the Global LEI Index against the Subject Organization Name Field (see Mark Certifcate Requirements (b)) and Subject Serial Number Field (see <<_subject_distinguished_name_fields>> (k)) within the context of the subject's jurisdiction as specified in <<_subject_distinguished_name_fields>> (j)) The address information from Mark validation SHALL be compared to the Headquarters Address information in the LEI record in order to detect potential matching errors or errors in the registration information. If the addresses do not match, the CA will attempt to validate the address found in the LEI record as a confirmed office location for the Subscriber, if possible.
+. The CA SHALL verify that the ValidationSources field of the associated LEI record contains the designation FULLY_CORROBORATED before including an LEI in a MC.
 --
 
 . *Certificate field:* subject:trademarkCountryOrRegionName (OID: 1.3.6.1.4.1.53087.1.3)
@@ -3072,7 +3092,8 @@ No stipulation.
 
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
-. “WebTrust for CAs v 2.0 or newer” AND “WebTrust Principles and Criteria for Certification Authorities - Verified Mark Certificates”
+. Until such time as the audit scheme is renamed and reissued as shown in subsection 2, “WebTrust for CAs v 2.0 or newer” AND “WebTrust Principles and Criteria for Certification Authorities - Verified Mark Certificates”
+. WebTrust for CAs v 2.0 or newer” AND “WebTrust Principles and Criteria for Certification Authorities - Mark Certificates”
 
 The audit scheme MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
@@ -3084,7 +3105,7 @@ No stipulation.
 
 === Communication of results
 
-The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert the VMC policy identifier OID (1.3.6.1.4.1.53087.1.1). The CA SHALL make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion. The CA SHOULD make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA SHALL provide an explanatory letter signed by the Qualified Practitioner.
+The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert the MC policy identifier OID (1.3.6.1.4.1.53087.1.1). The CA SHALL make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion. The CA SHOULD make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA SHALL provide an explanatory letter signed by the Qualified Practitioner.
 
 === Self-Audits
 
@@ -3294,7 +3315,7 @@ No stipulation.
 
 If the CA has issued and managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY limit liability to the Certificate Beneficiaries or any other third parties for any losses suffered as a result of use or reliance on such Certificate beyond those specified in the CA's Certificate Policy and/or Certification Practice Statement, pursuant to the minimum liability requirement below. If the CA has not issued or managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY seek to limit its liability to the Subscriber and to Relying Parties, regardless of the cause of action or legal theory involved, for any and all claims, losses or damages suffered as a result of the use or reliance on such Certificate by any appropriate means that the CA desires. If the CA chooses to limit its liability for Certificates that are not issued or managed in compliance with these Requirements or its Certificate Policy and/or Certification Practice Statement, then the CA SHALL include the limitations on liability in the CA's Certificate Policy and/or Certification Practice Statement, pursuant to the minimum liability requirement below.
 
-The CA MAY NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per Verified Mark Certificate.
+The CA MAY NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per Mark Certificate.
 
 === Indemnities
 
@@ -3437,7 +3458,7 @@ The DNS TXT record MUST be placed on the ``_validation-contactphone`` subdomain 
 [#mapping-of-mark-terminology]
 == Mapping of Combined, Design, and Word Mark Terminology to Terminology of Authorized Trademark Offices 
 
-This table is included as an example of how to map the standards and terminology of the Verified Mark Certificates Requirements to the standards and terminology of sample countries. CAs should generally follow these mapping examples for trademarks issued by other countries.
+This table is included as an example of how to map the standards and terminology of the Mark Certificates Requirements to the standards and terminology of sample countries. CAs should generally follow these mapping examples for trademarks issued by other countries.
 
 [%header,cols="1,1,1,1",]
 |===
@@ -3487,22 +3508,22 @@ This Appendix is intentionally left blank.
 
 [appendix]
 [#terms-of-use]
-== VMC Terms of Use (“VMC Terms”)
+== MC Terms of Use (“MC Terms”)
 
-All Mark Asserting Entities (MAEs) are required, as a condition of being issued a Verified Mark Certificate, to agree to these VMC Terms. Any and all use, display, or reliance on any Verified Mark Certificate (and any Mark Representation and any other data or information therein) by Consuming Entities, Relying Parties, and any other person, is subject to and conditional upon acceptance of these VMC Terms. The OID 1.3.6.1.4.1.53087.1.1 in the Verified Mark Certificate incorporates by reference these VMC Terms. If any person does not agree to these VMC Terms, such person may not obtain, use, publish, or rely upon any Verified Mark Certificate or on any Mark Representation or any other data or information in a Verified Mark Certificate.
+All Mark Asserting Entities (MAEs) are required, as a condition of being issued a Mark Certificate, to agree to these MC Terms. Any and all use, display, or reliance on any Mark Certificate (and any Mark Representation and any other data or information therein) by Consuming Entities, Relying Parties, and any other person, is subject to and conditional upon acceptance of these MC Terms. The OID 1.3.6.1.4.1.53087.1.1 in the Mark Certificate incorporates by reference these MC Terms. If any person does not agree to these MC Terms, such person may not obtain, use, publish, or rely upon any Mark Certificate or on any Mark Representation or any other data or information in a Mark Certificate.
 
 . Definitions.
 +
-Capitalized words will have meanings set out in <<_definitions_and_acronyms>> of the Verified Mark Certificate Requirements.
+Capitalized words will have meanings set out in <<_definitions_and_acronyms>> of the Mark Certificate Requirements.
 . Limited Right to Reproduce and Display.
 +
-The MAE hereby grants, subject to the terms, conditions and restrictions in the VMC Requirements and these VMC Terms:
+The MAE hereby grants, subject to the terms, conditions and restrictions in the MC Requirements and these MC Terms:
 +
 []
 --
-. to the Issuing CA, a limited, non-exclusive, worldwide license to issue a Verified Mark Certificate that contains the VMC Marks and to log said certificate in a limited number of CertificateTransparency Logs as required by the VMC Requirements; and
-. to Consuming Entities, a limited, non-exclusive, worldwide license to use the VMC Marks in conjunction with internal logo recognition systems, and to host, store, reproduce, display, process, and modify as permitted by section 3.1 the VMC Marks only in direct visual association with communications, correspondence, or services authored or provided by the MAE from or through one of the same domains included within the Verified Mark Certificate's Subject Alternative Name field; and
-. to certificate transparency log operators if different from the Issuing CA, a limited, non-exclusive,worldwide license to retain a copy of and to reproduce the Verified Mark Certificate to support a durablepublic record of those issued certificates, and for the purpose of permitting members of the public to audit the verification of Verified Mark Certificates.
+. to the Issuing CA, a limited, non-exclusive, worldwide license to issue a Mark Certificate that contains the MC Marks and to log said certificate in a limited number of CertificateTransparency Logs as required by the MC Requirements; and
+. to Consuming Entities, a limited, non-exclusive, worldwide license to use the MC Marks in conjunction with internal logo recognition systems, and to host, store, reproduce, display, process, and modify as permitted by section 3.1 the MC Marks only in direct visual association with communications, correspondence, or services authored or provided by the MAE from or through one of the same domains included within the Mark Certificate's Subject Alternative Name field; and
+. to certificate transparency log operators if different from the Issuing CA, a limited, non-exclusive,worldwide license to retain a copy of and to reproduce the Mark Certificate to support a durablepublic record of those issued certificates, and for the purpose of permitting members of the public to audit the verification of Mark Certificates.
 --
 
 +
@@ -3510,34 +3531,34 @@ No other license is granted to any other party, or for any other use.
 
 . License Restrictions and Conditions.
 +
-Any Consuming Entity that incorporates or intends to incorporate the VMC Marks obtained through an issued and published Verified Mark Certificate into its products and services, agrees that its license to do so is subject to and conditional on the following:
+Any Consuming Entity that incorporates or intends to incorporate the MC Marks obtained through an issued and published Mark Certificate into its products and services, agrees that its license to do so is subject to and conditional on the following:
 +
 []
 --
 . Quality Control, Same Treatment.
 +
-The Consuming Entity may not distort at display time any Mark Representation obtained from a published Verified Mark Certificate, change its colors or background, modify its transparency, or alter it in any way other than to adjust its size or scale, or to crop it in a manner consistent with cropping performed on other Mark Representations displayed in the same context. If a Consuming Entity displays a Word Mark obtained from a published Verified Mark Certificate, it must do so in a neutral manner applied consistently to all Word Marks from all Verified Mark Certificates that are shown in the same visual context. The Consuming Entity may display a Mark included in a Verified Mark Certificate without also displaying a Word Mark included in the same Verified Mark Certificate, but the Consuming Entity may not display a Word Mark included in a Verified Mark Certificate without also displaying the Mark included in the same Verified Mark Certificate.
+The Consuming Entity may not distort at display time any Mark Representation obtained from a published Mark Certificate, change its colors or background, modify its transparency, or alter it in any way other than to adjust its size or scale, or to crop it in a manner consistent with cropping performed on other Mark Representations displayed in the same context. If a Consuming Entity displays a Word Mark obtained from a published Mark Certificate, it must do so in a neutral manner applied consistently to all Word Marks from all Mark Certificates that are shown in the same visual context. The Consuming Entity may display a Mark included in a Mark Certificate without also displaying a Word Mark included in the same Mark Certificate, but the Consuming Entity may not display a Word Mark included in a Mark Certificate without also displaying the Mark included in the same Mark Certificate.
 . No Partnership or Relationships implied.
 +
-Subject to an express agreement to the contrary between the Consuming Entity and the MAE, neither the VMC Marks nor any other content of the Verified Mark Certificate may be used or displayed in any way that reasonably implies any relationship between the Consuming Entity and the MAE, beyond the bare licensor-licensee relationship created by these VMC Terms.
+Subject to an express agreement to the contrary between the Consuming Entity and the MAE, neither the MC Marks nor any other content of the Mark Certificate may be used or displayed in any way that reasonably implies any relationship between the Consuming Entity and the MAE, beyond the bare licensor-licensee relationship created by these MC Terms.
 . CRL or OCSP Checks.
 +
-Consuming Entities must check the Certificate Revocation Lists maintained by the CA or perform an on-line revocation status check using OCSP to determine whether a Verified Mark Certificate has been revoked no less frequently than every 7 days.
+Consuming Entities must check the Certificate Revocation Lists maintained by the CA or perform an on-line revocation status check using OCSP to determine whether a Mark Certificate has been revoked no less frequently than every 7 days.
 . Lawful Use
 +
-Consuming Entities may only use the Mark Representation in a Verified Mark Certificate in accordance with applicable law.
+Consuming Entities may only use the Mark Representation in a Mark Certificate in accordance with applicable law.
 . Sufficient Ownership or License.
 +
-The MAE warrants that the VMC Marks published via a Verified Mark Certificate represent a Registered Mark (and Word Mark, if any) that the MAE owns or for which the MAE has obtained sufficient license to be able to grant the limited license in these VMC Terms, and that it will immediately revoke the Verified Mark Certificate if it no longer owns or has a sufficient license to the applicable Registered Mark (or Word Mark, if any). The MAE will defend and will be liable for any intellectual property or other claims against any Consuming Entity, Relying Party or CA that arise from the content of the MAE's application for a Verified Mark Certificate.
+The MAE warrants that the MC Marks published via a Mark Certificate represent a Registered Mark (and Word Mark, if any) that the MAE owns or for which the MAE has obtained sufficient license to be able to grant the limited license in these MC Terms, and that it will immediately revoke the Mark Certificate if it no longer owns or has a sufficient license to the applicable Registered Mark (or Word Mark, if any). The MAE will defend and will be liable for any intellectual property or other claims against any Consuming Entity, Relying Party or CA that arise from the content of the MAE's application for a Mark Certificate.
 . No obligation to display.
 +
-The MAE acknowledges that Consuming Entities are under no obligation to display the VMC Marks in connection with content the MAE publishes that is associated with the domains the MAE owns or controls as a Domain Registrant, even if a communication or message is confirmed to be from the MAE and a suitable VMC Mark can be obtained and safely displayed from the applicable Verified Mark Certificate. Instead, Consuming Entities may choose to display the VMC Marks in accordance with these VMC Terms, or not display them, at their option.
+The MAE acknowledges that Consuming Entities are under no obligation to display the MC Marks in connection with content the MAE publishes that is associated with the domains the MAE owns or controls as a Domain Registrant, even if a communication or message is confirmed to be from the MAE and a suitable MC Mark can be obtained and safely displayed from the applicable Mark Certificate. Instead, Consuming Entities may choose to display the MC Marks in accordance with these MC Terms, or not display them, at their option.
 . Termination.
 +
-Immediately upon revocation or expiration of the Verified Mark Certificate, the MAE will cease publishing or using the Verified Mark Certificate, and the license granted to Consuming Entities in Section 2.2 above SHALL terminate. The license to a Consuming Entity in Section 2.2 above also terminates automatically and immediately upon breach of any provision of these VMC Terms by the Consuming Entity. Consuming Entities must immediately cease any and all use of the VMC Marks upon termination of the applicable license.
-. Updates to VMC Requirements and VMC Terms.
+Immediately upon revocation or expiration of the Mark Certificate, the MAE will cease publishing or using the Mark Certificate, and the license granted to Consuming Entities in Section 2.2 above SHALL terminate. The license to a Consuming Entity in Section 2.2 above also terminates automatically and immediately upon breach of any provision of these MC Terms by the Consuming Entity. Consuming Entities must immediately cease any and all use of the MC Marks upon termination of the applicable license.
+. Updates to MC Requirements and MC Terms.
 +
-The VMC Requirements and VMC Terms may be updated from time to time. All parties agree that the version of the VMC Requirements and VMC Terms in effect at the time of issuance of a Verified Mark Certificate SHALL apply through the date of expiration or revocation of the Verified Mark Certificate (and, for those provisions that by their nature extend beyond the date of expiration or revocation, until the provisions no longer would apply by their terms). It is the responsibility of each entity who obtains, uses, publishes or relies upon a Verified Mark Certificate to review and familiarize itself from time to time with any updated versions of the VMC Requirements and VMC Terms.
+The MC Requirements and MC Terms may be updated from time to time. All parties agree that the version of the MC Requirements and MC Terms in effect at the time of issuance of a Mark Certificate SHALL apply through the date of expiration or revocation of the Mark Certificate (and, for those provisions that by their nature extend beyond the date of expiration or revocation, until the provisions no longer would apply by their terms). It is the responsibility of each entity who obtains, uses, publishes or relies upon a Mark Certificate to review and familiarize itself from time to time with any updated versions of the MC Requirements and MC Terms.
 --
 
 [appendix]
@@ -3561,7 +3582,7 @@ This Appendix is still being drafted.
 [appendix]
 == Additional F2F Verification Procedure
 
-The Contract Signer or Certificate Approver for the Verified Mark Certificate must perform the F2F Verification Procedure for the Applicant according to the process described in _either_ Section 1 _or_ Section 2 below, as selected by the CA at its discretion. If the Contract Signer and Certificate Approver roles are fulfilled by different natural persons, then only one of Contract Signer or Certificate Approver must perform the F2F Verification Procedure. In all cases, the natural person performing the F2F Verification Procedure is referred to as the “Designated Individual” in the procedure defined below.
+The Contract Signer or Certificate Approver for the Mark Certificate must perform the F2F Verification Procedure for the Applicant according to the process described in _either_ Section 1 _or_ Section 2 below, as selected by the CA at its discretion. If the Contract Signer and Certificate Approver roles are fulfilled by different natural persons, then only one of Contract Signer or Certificate Approver must perform the F2F Verification Procedure. In all cases, the natural person performing the F2F Verification Procedure is referred to as the “Designated Individual” in the procedure defined below.
 
 === Notarization process for document signed by Designated Individual
 
@@ -3608,9 +3629,9 @@ The CA may use a competent third party service provider trusted by the CA to per
 
 === PII and Privacy Requirements
 
-==== VMC Designated Individual PII & Privacy Processes
+==== MC Designated Individual PII & Privacy Processes
 
-The issuance of a VMC requires the issuing CA to validate the following information:
+The issuance of a MC requires the issuing CA to validate the following information:
 
 * The applying organization's ownership of their business domain
 * The applying organization's ownership of the logo to be used
@@ -3681,13 +3702,13 @@ If a CA uses an external service provider to conduct web-based F2F sessions, the
 [appendix]
 == Country-Specific Interpretative Guidelines (Normative)
 
-_NOTE: This appendix provides alternative interpretations of the VMC Requirements for countries that have a language, cultural, technical, or legal reason for deviating from a strict interpretation of these Requirements. More specific information for particular countries may be added to this appendix in the future._
+_NOTE: This appendix provides alternative interpretations of the MC Requirements for countries that have a language, cultural, technical, or legal reason for deviating from a strict interpretation of these Requirements. More specific information for particular countries may be added to this appendix in the future._
 
 === Organization Names
 
 ==== Non-Latin Organization Name
 
-Where an Verified Mark Applicant's organization name is not registered with a QGIS in _Latin_ characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Requirements, a CA MAY include a Latin character organization name in the Verified Mark Certificate. In such a case, the CA MUST follow the procedures laid down in this section.
+Where a Mark Applicant's organization name is not registered with a QGIS in _Latin_ characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Requirements, a CA MAY include a Latin character organization name in the Mark Certificate. In such a case, the CA MUST follow the procedures laid down in this section.
 
 ==== Romanized Names
 
@@ -3719,7 +3740,7 @@ As interpretation of the procedures set out above:
 .. The CA MAY verify the Romanized transliteration, language translation (e.g. English name), or other recognized Roman-letter substitute of the Applicant's formal legal name with either a QIIS, Verified Legal Opinion, or Verified Accountant Letter.
 .. The CA MAY use the Financial Services Agency to verify a Romanized, translated, or other recognized Roman-letter substitute name. When used, the CA MUST verify that the translated English is recorded in the audited Financial Statements.
 .. When relying on Articles of Incorporation to verify a Romanized, translated, or other recognized Roman-letter substitute name, the Articles of Incorporation MUST be accompanied either: by a document, signed with the original Japanese Corporate Stamp, that proves that the Articles of Incorporation are authentic and current, or by a Verified Legal Opinion or a Verified Accountant Letter. The CA MUST verify the authenticity of the Corporate Stamp.
-.. A Romanized, translated, or other recognized Roman-lettered substitute name confirmed in accordance with this Appendix H-1 stored in the ROBINS database operated by JIPDEC MAY be relied upon by a CA for determining the allowed organization name during any issuance or renewal process of an Verified Mark Certificate without the need to re-perform the above procedures.
+.. A Romanized, translated, or other recognized Roman-lettered substitute name confirmed in accordance with this Appendix H-1 stored in the ROBINS database operated by JIPDEC MAY be relied upon by a CA for determining the allowed organization name during any issuance or renewal process of an Mark Certificate without the need to re-perform the above procedures.
 
 . Accounting Practitioner
 +
@@ -3750,7 +3771,7 @@ For purposes of these Requirements, a Japanese Notary Public is considered equiv
 [appendix]
 == Abstract Syntax Notation One module for EV certificates
 
-The definition of these attributes is identical to those included in EV Certificates and are included in Verified Mark Certificates.
+The definition of these attributes is identical to those included in EV Certificates and are included in Mark Certificates.
 
 ```
 CABFSelectedAttributeTypes \{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) module(4) cabfSelectedAttributeTypes(1) 1}
