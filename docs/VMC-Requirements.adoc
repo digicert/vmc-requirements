@@ -205,7 +205,7 @@ No stipulation.
 
 *Common Mark:* A mark or logo used by an Applicant/Subscriber which the Applicant/Subscriber asserts a right to use under common law (or equivalent in civil law countries).  The Common Mark may or may not also be a Registered Mark. 
 
-*Common Mark Certificate:* A Mark Certificate that is either a Prior Use Mark Certificate or a Modified Registered Trademark Certificate. 
+*Common Mark Certificate:* : A Mark Certificate that contains a Mark Representation that has not been verified as a Registered Mark or Government Mark.
 
 *Confirmation Request*: An appropriate out-of-band communication requesting verification or confirmation of the particular fact at issue.
 
