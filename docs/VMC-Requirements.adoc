@@ -313,7 +313,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Mark Representation:* A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under <<_subscriber_certificate>>.
 
-*Mark Verifying Authority (“MVA”):* The authority who issues a Mark Certificate or Mark Certificate. Also referred to as a Certification Authority or CA.
+*Mark Verifying Authority (“MVA”):* The authority who issues a Mark Certificate. Also referred to as a Certification Authority or CA.
 
 *Maximum Validity Period*: 1. The maximum time period for which the issued MC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a MC pursuant to these Requirements.
 
@@ -328,7 +328,8 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 *MC Marks:* Any Mark permitted in a Mark Certificate by the Mark Certificate Requirements.
 
 *MC Terms:* The terms of use that apply to an MC Certificate and to the Mark Representation and related data contained in a Mark Certificate, as set out in <<terms-of-use>> to these MC Requirements.
-Modified Registered Trademark Certificate: One type of Common Mark Certificate.
+
+*Modified Registered Trademark Certificate:* One type of Common Mark Certificate.
 
 *Notary*: A notary (or legal equivalent in the applicable jurisdiction), Latin Notary, lawyer, solicitor, or other person or organization in the jurisdiction where the Contract Signer or Certificate Approver (also known as the “Designated Individual”) will be verified whose commission under applicable law includes authority to authenticate the execution of a signature on a document. “Notarize” includes Remote Notarization.
 
