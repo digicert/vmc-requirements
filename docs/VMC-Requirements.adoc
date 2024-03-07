@@ -1577,9 +1577,9 @@ This approved list may be modified from time to time.
 
 ====== Color Restrictions 
 
-Mark Representations in Mark Certificates based on proof of prior use shall follow the same color rules that apply to Common Law Marks in the applicable jurisdiction. 
+Mark Representations in Mark Certificates based on proof of prior use shall follow the same color rules that apply to Common Marks in the applicable jurisdiction. 
 
-In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the rules that apply to Common Law Marks in the applicable jurisdiction, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_prior_use_of_mark_for_minimum_period>>.
+In determining whether the colors in the Mark Representation submitted by the Subscriber match the colors permitted by the rules that apply to Common Marks in the applicable jurisdiction, the CA SHALL maintain a record of its decision and reasons therefor in the CA's records required in <<_verification_of_prior_use_of_mark_for_minimum_period>>.
 
 ===== Modification of Registered Trademark
 	
@@ -1682,7 +1682,7 @@ In determining whether the Applicant is the owner or a licensee of the Governmen
 
 ====== Confirmation of Mark Representation
 
-The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca> for comparison of the Government Mark as confirmed with the Mark Representation.
+The CA SHALL confirm that the Mark Representation submitted by the Applicant matches the Government Mark as confirmed under subsection (1). In determining whether the Mark Representation matches the Government Mark so confirmed, the CA SHALL maintain a record of its decisions and reasons therefor. The CA MAY follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Government Mark as confirmed with the Mark Representation.
 
 ====== Color Restrictions
 
