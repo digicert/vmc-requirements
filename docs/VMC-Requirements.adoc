@@ -310,7 +310,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Mark Certificate. May be the same as the Applicant and/or Subscriber.
 
-*Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements but whose Mark is not a Registered Mark or a Government Mark.
+*Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements.
 
 *Mark Representation:* A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under <<_subscriber_certificate>>.
 
