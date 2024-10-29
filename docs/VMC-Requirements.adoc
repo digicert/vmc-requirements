@@ -2705,7 +2705,7 @@ The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the Aut
 +
 The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
 +
-If the subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MUST be present and the value MUST contain a UTF8String with the value “Mark Certificate”. Otherwise, this extension MUST NOT be present.
+For Certificates issued on or after 2025-03-15, this extension SHALL NOT be present. For Certificates issued before 2025-03-15 whose subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MAY be present and the value MAY contain a UTF8String with the value “Mark Certificate”.
 +
 If present, this extension SHALL be marked critical.
 
