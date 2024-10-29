@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Mark Certificates
 Mark Certificate Requirements Authors
-1.6, March 7, 2024
+1.7, XX YY, 2024
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -65,6 +65,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.4 |03-31-2022 |03-31-2022
 |1.5 |07-15-2023 |07-15-2023
 |1.6 |03-07-2024 |03-07-2024
+|1.7 |XX-YY-2024 |XX-YY-2024
 |===
 
 ==== Mark Certificate OIDs
@@ -2774,7 +2775,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 . *Certificate field:* subject:streetAddress (OID: 2.5.4.9)
 +
-*Optional*
+*Required*
 +
 *Contents:* The subject:streetAddress field MUST contain the Subject's street address information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
