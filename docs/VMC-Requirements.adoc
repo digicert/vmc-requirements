@@ -1596,7 +1596,7 @@ The CA may accept the following forms of modification of the Registered Mark in 
 . For Design Marks and Combined Marks, a portion of the design mark element MAY be removed (but more than 49% of the design mark element SHALL NOT be removed), but the remaining design mark element SHALL NOT be altered from the original. In the case of Combined Marks, the word mark elements MAY also be relocated in relation to the remaining design mark element as described in (1).
 . For Word Marks and Combined Marks where the word mark element consists of a single word, the one word MAY be separated into multiple parts which may be stacked or not.
 . For Word Marks and Combined Marks where the word mark element consists of multiple words, MAY be separated into multiple parts which may be stacked or not, or the multiple words MAY be combined into a single word.
-. Modified Registration Marks MAY be shown in any font or color against a colored or patterned background.
+. Modified Registered Marks MAY be shown in any font or color against a colored or patterned background.
 
 The CA SHOULD review the modified Mark Representation to determine if the modification makes a significant change to the obvious meaning of the original mark (as compared to the Registered Mark), and if so should notify the Applicant that the modifications cannot be accepted as submitted but must be further modified.  However, the Applicant may continue to request a Mark Certificate with the requested further modifications at the Applicant's option.
 
