@@ -1563,8 +1563,8 @@ This type of Mark Certificate is appropriate for Common Marks that are not Regis
 
 The Applicant will provide the CA with the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate. The CA SHALL verify that:
 
-. a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the domain name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
-. a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on a domain currently controlled by the applicant, where the historical display is verified via one of the Archive Webpage Sources allowed by these Requirements.
+. a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the Domain Name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
+. a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on the same Domain Name that was verified as being controlled by the Applicant in (1). The historical display MUST be verified via one of the Archive Webpage Sources allowed by these Requirements.
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all Mark images found during the verification process stated in the previous paragraph. 
 
