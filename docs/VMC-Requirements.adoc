@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Mark Certificates
 Mark Certificate Requirements Authors
-1.7, XX YY, 2024
+1.7, XX YY, 2025
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -65,7 +65,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.4 |03-31-2022 |03-31-2022
 |1.5 |07-15-2023 |07-15-2023
 |1.6 |03-07-2024 |03-07-2024
-|1.7 |XX-YY-2024 |XX-YY-2024
+|1.7 |XX-YY-2025 |XX-YY-2025
 |===
 
 ==== Mark Certificate OIDs
