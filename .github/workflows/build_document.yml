@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             -   name: Checkout
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
             -   name: Build
                 run: |
                     sudo apt update &&
@@ -14,7 +14,7 @@ jobs:
                     asciidoctor-pdf docs/VMC-Requirements.adoc &&
                     /bin/bash -c "asciidoctor --backend docbook --out-file - docs/VMC-Requirements.adoc | pandoc --from docbook --to docx --output docs/VMC-Requirements.docx" &&
                     asciidoctor docs/VMC-Requirements.adoc
-            -   uses: actions/upload-artifact@v3
+            -   uses: actions/upload-artifact@v4
                 with:
                     path: |
                         docs/VMC-Requirements.pdf
@@ -29,12 +29,12 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             -   name: Checkout
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
                 with:
                     ref: main
                     path: vmc-requirements
             -   name: Checkout diff software
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
                 with: 
                     repository: ahus1/asciidoc-diff
                     ref: f085aa908c963f74472d13bafc2f0fb1054801fe
@@ -45,7 +45,7 @@ jobs:
                     sudo apt install -y asciidoctor npm &&
                     /bin/bash -c "cd diff && npm install"
             -   name: Get branch HTML doc
-                uses: actions/download-artifact@v3
+                uses: actions/download-artifact@v4
                 with:
                     name: artifact
                     path: artifact
@@ -58,7 +58,7 @@ jobs:
                     /bin/bash -c "cd diff && npm run diff" &&
                     mv diff/bv2-diff.html VMC-Requirements_diff.html
             -   name: Upload diff
-                uses: actions/upload-artifact@v3
+                uses: actions/upload-artifact@v4
                 with:
                     path:
                         VMC-Requirements_diff.html
