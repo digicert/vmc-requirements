@@ -20,6 +20,7 @@ jobs:
                         docs/VMC-Requirements.pdf
                         docs/VMC-Requirements.docx
                         docs/VMC-Requirements.html
+                    name: docs
                     if-no-files-found: 'error'
     build_diff:
         name: Build Diff
@@ -47,8 +48,8 @@ jobs:
             -   name: Get branch HTML doc
                 uses: actions/download-artifact@v4
                 with:
-                    name: artifact
-                    path: artifact
+                    name: docs
+                    path: docs
             -   name: Build main
                 run: |
                     asciidoctor vmc-requirements/docs/VMC-Requirements.adoc -o diff/bv2-cr1.html
@@ -60,6 +61,7 @@ jobs:
             -   name: Upload diff
                 uses: actions/upload-artifact@v4
                 with:
+                    name: diff
                     path:
                         VMC-Requirements_diff.html
                     if-no-files-found: 'error'
