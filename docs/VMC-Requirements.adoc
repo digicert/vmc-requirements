@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Mark Certificates
 Mark Certificate Requirements Authors
-1.6, March 7, 2024
+1.7, January 22, 2025
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -65,6 +65,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.4 |03-31-2022 |03-31-2022
 |1.5 |07-15-2023 |07-15-2023
 |1.6 |03-07-2024 |03-07-2024
+|1.7 |01-22-2025 |01-22-2025
 |===
 
 ==== Mark Certificate OIDs
@@ -309,7 +310,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Mark Asserting Entity (“MAE”):* An Applicant for/Subscriber of a Mark Certificate. May be the same as the Applicant and/or Subscriber.
 
-*Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements but whose Mark is not a Registered Mark or a Government Mark.
+*Mark Certificate:* A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements.
 
 *Mark Representation:* A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under <<_subscriber_certificate>>.
 
@@ -1562,8 +1563,8 @@ This type of Mark Certificate is appropriate for Common Marks that are not Regis
 
 The Applicant will provide the CA with the Mark Representation in SVG format that the Applicant wishes to include in the Mark Certificate. The CA SHALL verify that:
 
-. a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the domain name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
-. a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on a domain currently controlled by the applicant, where the historical display is verified via one of the Archive Webpage Sources allowed by these Requirements.
+. a Mark that matches the Mark Representation is currently displayed on a website. The Applicant's control of the Domain Name of the website MUST be verified using at least one method specified in <<_validation_of_domain_authorization_or_control>>, and
+. a Mark that matches the Mark Representation was historically displayed at least 12 months earlier than the date of Mark verification on the same Domain Name that was verified as being controlled by the Applicant in (1). The historical display MUST be verified via one of the Archive Webpage Sources allowed by these Requirements.
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all Mark images found during the verification process stated in the previous paragraph. 
 
@@ -1595,7 +1596,7 @@ The CA may accept the following forms of modification of the Registered Mark in 
 . For Design Marks and Combined Marks, a portion of the design mark element MAY be removed (but more than 49% of the design mark element SHALL NOT be removed), but the remaining design mark element SHALL NOT be altered from the original. In the case of Combined Marks, the word mark elements MAY also be relocated in relation to the remaining design mark element as described in (1).
 . For Word Marks and Combined Marks where the word mark element consists of a single word, the one word MAY be separated into multiple parts which may be stacked or not.
 . For Word Marks and Combined Marks where the word mark element consists of multiple words, MAY be separated into multiple parts which may be stacked or not, or the multiple words MAY be combined into a single word.
-. Modified Word Marks MAY be shown in any font or color against a colored or patterned background.
+. Modified Registered Marks MAY be shown in any font or color against a colored or patterned background.
 
 The CA SHOULD review the modified Mark Representation to determine if the modification makes a significant change to the obvious meaning of the original mark (as compared to the Registered Mark), and if so should notify the Applicant that the modifications cannot be accepted as submitted but must be further modified.  However, the Applicant may continue to request a Mark Certificate with the requested further modifications at the Applicant's option.
 
@@ -2704,7 +2705,7 @@ The Mark Representation MUST NOT contain ``<script>`` tags. Additionally the Aut
 +
 The Pilot identifier extension denotes that the Certificate contains elements (fields or extensions) that are of an experimental nature.
 +
-If the subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MUST be present and the value MUST contain a UTF8String with the value “Mark Certificate”. Otherwise, this extension MUST NOT be present.
+For Certificates issued on or after 2025-03-15, this extension SHALL NOT be present. For Certificates issued before 2025-03-15 whose subject:markType field contains “Prior Use Mark” or “Modified Registered Mark”, then this extension MAY be present and the value MAY contain a UTF8String with the value “Mark Certificate”.
 +
 If present, this extension SHALL be marked critical.
 
@@ -2774,7 +2775,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 . *Certificate field:* subject:streetAddress (OID: 2.5.4.9)
 +
-*Optional*
+*Required*
 +
 *Contents:* The subject:streetAddress field MUST contain the Subject's street address information as verified under <<_authentication_of_organization_and_domain_identity>>.
 
