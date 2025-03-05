@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Mark Certificates
 Mark Certificate Requirements Authors
-1.7, January 22, 2025
+1.8, X YY, 2025
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -66,6 +66,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.5 |07-15-2023 |07-15-2023
 |1.6 |03-07-2024 |03-07-2024
 |1.7 |01-22-2025 |01-22-2025
+|1.8 |XX-YY-2025 |XX-YY-2025
 |===
 
 ==== Mark Certificate OIDs
@@ -2992,6 +2993,12 @@ If the subject:markType field contains “Prior Use Mark”:
 If the subject:markType field does not contain "Prior Use Mark”, then this field is *Prohibited*.
 +
 *Contents:* This field MUST contain the URL where the Mark Representation included in the Mark Certificate was located by the CA during the verification process.
+
+. *Certificate field:* subject:goodAndServiceCategory (OID: 1.3.6.1.4.1.53087.1.14)
++
+* *Optional*
++
+*Contents:* This field MUST contain the Nice Classification (TODO: Add defined term and reference) of the Subject.
 
 . *Other Subject Attributes*
 +
