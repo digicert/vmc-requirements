@@ -34,7 +34,7 @@ The five types of Mark Certificates included in these MC Requirements are as fol
 . Common Mark Certificates
 .. Prior Use Mark Certificates
 .. Modified Registered Trademark Certificates
-.. New Mark Certificates
+.. Provisional Mark Certificates
 . Verified Mark Certificates
 .. Registered Mark Certificates
 .. Government Mark Certificates
