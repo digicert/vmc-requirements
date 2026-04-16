@@ -2945,7 +2945,7 @@ The CA SHALL:
 +
 *Contents:* This field MUST contain one of the following values corresponding to the sub-section in <<_mark_verification_in_verified_mark_certificates>> or <<_mark_verification_in_common_mark_certificates>> that the CA employed to validate the Mark included in the Certificate:
 +
-[%header,cols="1,1"]
+[%header,cols="1,1,1"]
 |===
 |Section number of Mark validation method |subject:markType value| Certificate type
 
