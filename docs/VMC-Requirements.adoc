@@ -322,7 +322,7 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *MC Authority:* A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the Mark Certificate Request, to take the Request actions described in these Requirements.
 
-*Mark Certificate Request:* A request from an Applicant to the CA requesting that the CA issue an MC Certificate to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
+*Mark Certificate Request:* A request from an Applicant to the CA requesting that the CA issue a Mark Certificate (MC) to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
 
 *MC Mark:* The Mark Representation and Word Mark, if any, contained in a MAE's Mark Certificate application.
 
