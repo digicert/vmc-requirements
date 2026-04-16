@@ -3595,7 +3595,7 @@ This Appendix is still being drafted.
 [appendix]
 == CT Logs Approved by AuthIndicators Working Group
 
-This Appendix lists the Certificate Transparency logs that are acceptable for logging Pre-certificates to comply with these Requirements. The listed log(s) conform to either [RFC 6962] or [static-ct-api version 1.1.0](https://c2sp.org/static-ct-api@v1.1.0).
+This Appendix lists the Certificate Transparency logs that are acceptable for logging Pre-certificates to comply with these Requirements. The listed log(s) conform to either [RFC6962] or https://c2sp.org/static-ct-api@v1.1.0[static-ct-api version 1.1.0].
 
 [cols=",",]
 |===
