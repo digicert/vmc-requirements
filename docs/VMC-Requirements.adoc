@@ -3597,7 +3597,7 @@ This Appendix is still being drafted.
 
 This Appendix lists the Certificate Transparency logs that are acceptable for logging Pre-certificates to comply with these Requirements. The listed log(s) conform to either [RFC6962] or https://c2sp.org/static-ct-api@v1.1.0[static-ct-api version 1.1.0].
 
-[cols=",",]
+[cols=",,",]
 |===
 |Log URL |Name |Kind
 |https://gorgon.ct.digicert.com/log|Gorgon |RFC 6962
