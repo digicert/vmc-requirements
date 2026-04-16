@@ -2877,7 +2877,7 @@ For Business Entities, the Registration Number that was received by the Business
 +
 *Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Modified Registered Mark”, or "Provisional Mark"; *Prohibited* otherwise
 +
-*Contents:* This field MUST contain the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
+*Contents:* This field MUST contain the country or region of the Trademark Office that registered the Registered Mark as a WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
 
 . *Certificate field:* subject:trademarkOfficeName (OID: 1.3.6.1.4.1.53087.1.2)
 +
