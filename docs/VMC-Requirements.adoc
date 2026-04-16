@@ -633,6 +633,8 @@ RFC6962, Request for Comments: 6962, Certificate Transparency. B. Laurie, A. Lan
 
 RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
 
+The Static Certificate Transparency API, v1.1.0, https://c2sp.org/static-ct-api@v1.1.0
+
 WebTrust for Certification Authorities , SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, Hoffman-Andrews, November 2019.
@@ -2689,7 +2691,7 @@ This extension is optional. If present, bit positions for keyCertSign and cRLSig
 The Extended Key Usage extension [RFC5280] MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This is REQUIRED, and the extension SHOULD be marked non-critical.
 . *signedCertificateTimestampList (OID: 1.3.6.1.4.1.11129.2.4.2)*
 +
-Mark Certificates pre-certificates MUST be logged to at least one of well-known Certificate Transparency (CT) logs [RFC6962] which then provide Signed Certificate Timestamps (SCT). The SCT must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
+Mark Certificates pre-certificates MUST be logged to one or more Certificate Transparency (CT) logs [RFC6962] which then provide one or more Signed Certificate Timestamps (SCT). The SCT(s) must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
 
 . *logotype extension (OID: 1.3.6.1.5.5.7.1.12)*
 +
@@ -3593,10 +3595,12 @@ This Appendix is still being drafted.
 [appendix]
 == CT Logs Approved by AuthIndicators Working Group
 
+This Appendix lists the Certificate Transparency logs that are acceptable for logging Pre-certificates to comply with these Requirements. The listed log(s) conform to either [RFC 6962] or [static-ct-api version 1.1.0](https://c2sp.org/static-ct-api@v1.1.0).
+
 [cols=",",]
 |===
-|Log URL |Name
-|https://gorgon.ct.digicert.com/log |Gorgon
+|Log URL |Name |Kind
+|https://gorgon.ct.digicert.com/log|Gorgon |RFC 6962
 |===
 
 [appendix]
