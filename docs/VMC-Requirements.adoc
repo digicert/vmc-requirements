@@ -1635,6 +1635,7 @@ _Logo_
 [.big]#N# amed
 [.big]#C# ompany
 |===
+
 ===== Provisional
 
 ====== Verification of Provisional Mark
@@ -1668,6 +1669,39 @@ In determining whether the Applicant is the owner or a licensee of the Registere
 The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor.  The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Registered Trademark with the Mark Representation. 
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
+
+The CA may accept the following forms of modification of the Registered Mark in the Mark Representation:
+
+. For Word Marks that consist of a single word, the one word MAY be separated into multiple parts which may be stacked or not.
+. For Word Marks that consist of multiple words, the words MAY be separated into multiple parts which may be stacked or not, or the multiple words MAY be combined into a single word.
+
+The following are examples of permitted modifications to registered Word Marks.
+
+[%header,cols="1,1,1"]
+|===
+|Registered Word Mark
+2+|Permitted Modifications
+
+|Pretty Logo
+|_Pretty_
+
+_Logo_
+
+|``Pretty``
+
+``Logo``
+
+|Long-named Company
+
+|*Long-named*
+
+*Company*
+
+|[.big]#L# ong-
+
+[.big]#N# amed
+[.big]#C# ompany
+|===
 
 ====== Color Restrictions 
 
