@@ -356,6 +356,8 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Private Organization*: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
+*Provisional Mark Certificate:* One type of Common Mark Certificate.
+
 *Public Key:* The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used to generate MC signing requests for the CA on behalf of the Subscriber.
 
 *Public Key Infrastructure:* A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
@@ -1636,7 +1638,7 @@ _Logo_
 [.big]#C# ompany
 |===
 
-===== Provisional
+===== Provisional Mark Verification
 
 ====== Verification of Provisional Mark
 The CA will perform the verification steps under <<_verification_of_mark_with_trademark_office>> and <<_verification_of_registered_mark_ownership_or_license>> for a Registered Mark submitted by the Applicant. Additionally, the Applicant will provide a Mark Representation that the Applicant wishes to include in the Mark Certificate. The representation of the Registered Mark and the Mark Representation that the Applicant wishes to include in the Mark Certificate MAY differ.
@@ -2987,7 +2989,7 @@ The CA SHALL:
 |<<_government_mark_verification>> |Government Mark| Verified Mark Certificate
 |<<_proof_of_prior_use>> |Prior Use Mark| Common Mark Certificate
 |<<_modification_of_registered_trademark>> |Modified Registered Mark| Common Mark Certificate
-|<<_provisional>> |Provisional Mark| Common Mark Certificate
+|<<_provisional_mark_verification>> |Provisional Mark| Common Mark Certificate
 |===
 
 . *Certificate fields:*
