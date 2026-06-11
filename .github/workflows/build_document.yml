@@ -3,7 +3,7 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
     build_document:
         name: Build Document
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
             -   name: Checkout
                 uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
         if: github.ref_name != 'main'
         needs:
             - build_document
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
             -   name: Checkout
                 uses: actions/checkout@v4

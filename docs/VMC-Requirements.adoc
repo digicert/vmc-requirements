@@ -1,6 +1,6 @@
 = Minimum Security Requirements for Issuance of Mark Certificates
 Mark Certificate Requirements Authors
-1.7, January 22, 2025
+1.8, June 11, 2026
 :sectnums:
 :sectnumlevels: 5
 :toc:
@@ -27,13 +27,14 @@ Mark Certificates may be issued with respect to marks accredited by legislation 
 
 All Subscribers/Mark Asserting Entities, Consuming Entities, and Relying Parties are bound by the MC Terms attached as <<terms-of-use>> according to their terms. CAs who issue Mark Certificates SHALL include the MC Terms in their applicable Certification Practice Statement.
 
-The four types of Mark Certificates included in these MC Requirements are as follows:
+The five types of Mark Certificates included in these MC Requirements are as follows:
 
 *Mark Certificates*
 
 . Common Mark Certificates
 .. Prior Use Mark Certificates
 .. Modified Registered Trademark Certificates
+.. Provisional Mark Certificates
 . Verified Mark Certificates
 .. Registered Mark Certificates
 .. Government Mark Certificates
@@ -66,6 +67,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.5 |07-15-2023 |07-15-2023
 |1.6 |03-07-2024 |03-07-2024
 |1.7 |01-22-2025 |01-22-2025
+|1.8 |06-11-2026 |06-11-2026
 |===
 
 ==== Mark Certificate OIDs
@@ -194,7 +196,7 @@ No stipulation.
 
 *Certificate Profile:* A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with <<_certificate_crl_and_ocsp_profiles>> of these Requirements, e.g., a Section in a CA's CPS or a certificate template file used by CA software.
 
-*Certificate Requester*: A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits a MC Certificate Request on behalf of the Applicant.
+*Certificate Requester*: A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits a Mark Certificate Request on behalf of the Applicant.
 
 *Certificate Revocation List:* A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
@@ -318,9 +320,9 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Maximum Validity Period*: 1. The maximum time period for which the issued MC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a MC pursuant to these Requirements.
 
-*MC Authority:* A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the MC Certificate Request, to take the Request actions described in these Requirements.
+*MC Authority:* A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the Mark Certificate Request, to take the Request actions described in these Requirements.
 
-*MC Certificate Request:* A request from an Applicant to the CA requesting that the CA issue an MC Certificate to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
+*Mark Certificate Request:* A request from an Applicant to the CA requesting that the CA issue a Mark Certificate (MC) to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver.
 
 *MC Mark:* The Mark Representation and Word Mark, if any, contained in a MAE's Mark Certificate application.
 
@@ -354,6 +356,8 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Private Organization*: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
+*Provisional Mark Certificate:* One type of Common Mark Certificate.
+
 *Public Key:* The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used to generate MC signing requests for the CA on behalf of the Subscriber.
 
 *Public Key Infrastructure:* A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
@@ -374,9 +378,11 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Registered Agent:* An individual or entity that is: (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
 
-*Registered Office:* The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
+*Registered Mark:* A mark that has been registered by at least one Trademark Office.
 
 *Registered Mark Certificate:* One type of Verified Mark Certificate.
+
+*Registered Office:* The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
 *Registration Authority (RA):* Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both. When “RA” is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA as stipulated in <<_registration_authorities>>.
 
@@ -628,6 +634,8 @@ RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure On
 RFC6962, Request for Comments: 6962, Certificate Transparency. B. Laurie, A. Langley, E. Kasper. June 2013.
 
 RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
+
+The Static Certificate Transparency API, v1.1.0, https://c2sp.org/static-ct-api@v1.1.0
 
 WebTrust for Certification Authorities , SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
@@ -1629,6 +1637,14 @@ _Logo_
 [.big]#N# amed
 [.big]#C# ompany
 |===
+
+===== Provisional Mark Verification
+
+====== Verification of Provisional Mark
+The CA will perform the verification steps under <<_verification_of_mark_with_trademark_office>> and <<_verification_of_registered_mark_ownership_or_license>> for a Registered Mark submitted by the Applicant. Additionally, the Applicant will provide a Mark Representation that the Applicant wishes to include in the Mark Certificate. The representation of the Registered Mark and the Mark Representation that the Applicant wishes to include in the Mark Certificate MAY differ.
+
+The CA SHALL verify that the Registered Mark was registered by the Trademark Office at least three years prior to the date of the submission of the Mark Certificate Request for the Mark Certificate.
+
 ==== Mark Verification in Verified Mark Certificates
 
 In addition to the identity and domain verification required by <<_initial_identity_validation>>, CAs issuing Verified Mark Certificates SHALL perform verification of the submitted Mark as follows:
@@ -1655,6 +1671,39 @@ In determining whether the Applicant is the owner or a licensee of the Registere
 The CA SHALL confirm that the Mark Representation submitted by the Subject organization matches the Registered Mark as it appears in the official database of the applicable Trademark Office or the WIPO Global Brand Database. In determining whether the Mark Representation matches the Registered Mark, the CA SHALL maintain a record of its decisions and reasons therefor.  The CA may, but is not required to, follow the guidelines in <<_optional_rules_for_matching_mark_representation_submitted_by_subscriber_with_registered_mark_verified_by_ca>> for comparison of the Registered Trademark with the Mark Representation. 
 
 The CA SHALL also retain a screenshot or other record of the Mark Representation provided by the Applicant and all information about the Registered Mark obtained from the applicable Trademark Office as well as all other supporting data that the CA relies upon in issuing the Verified Mark Certificate.
+
+The CA may accept the following forms of modification of the Registered Mark in the Mark Representation:
+
+. For Word Marks that consist of a single word, the one word MAY be separated into multiple parts which may be stacked or not.
+. For Word Marks that consist of multiple words, the words MAY be separated into multiple parts which may be stacked or not, or the multiple words MAY be combined into a single word.
+
+The following are examples of permitted modifications to registered Word Marks.
+
+[%header,cols="1,1,1"]
+|===
+|Registered Word Mark
+2+|Permitted Modifications
+
+|Pretty Logo
+|_Pretty_
+
+_Logo_
+
+|``Pretty``
+
+``Logo``
+
+|Long-named Company
+
+|*Long-named*
+
+*Company*
+
+|[.big]#L# ong-
+
+[.big]#N# amed
+[.big]#C# ompany
+|===
 
 ====== Color Restrictions 
 
@@ -2678,7 +2727,7 @@ This extension is optional. If present, bit positions for keyCertSign and cRLSig
 The Extended Key Usage extension [RFC5280] MUST contain id-kp-BrandIndicatorforMessageIdentification (OID: 1.3.6.1.5.5.7.3.31) as specified in Section 7 of the IETF Internet-Draft at https://tools.ietf.org/html/draft-chuang-bimi-certificate-00. This indicates the application of the Mark Certificate Profile. Other KeyPurposeIds MUST NOT be included. This is REQUIRED, and the extension SHOULD be marked non-critical.
 . *signedCertificateTimestampList (OID: 1.3.6.1.4.1.11129.2.4.2)*
 +
-Mark Certificates pre-certificates MUST be logged to at least one of well-known Certificate Transparency (CT) logs [RFC6962] which then provide Signed Certificate Timestamps (SCT). The SCT must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
+Mark Certificates pre-certificates MUST be logged to one or more Certificate Transparency (CT) logs [RFC6962] which then provide one or more Signed Certificate Timestamps (SCT). The SCT(s) must be added to the Certificate Transparency extension as a SignedCertificateTimestampList encoded as an octet string [RFC6962 section 3.3]. The AuthIndicators Working Group maintains a list of acceptable CT logs, and the current list is attached as <<_ct_logs_approved_by_authindicators_working_group>>. This extension is REQUIRED, and SHOULD NOT be marked critical.
 
 . *logotype extension (OID: 1.3.6.1.5.5.7.1.12)*
 +
@@ -2862,19 +2911,19 @@ For Business Entities, the Registration Number that was received by the Business
 
 . *Certificate field:* subject:trademarkCountryOrRegionName (OID: 1.3.6.1.4.1.53087.1.3)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Modified Registered Mark”, or “Provisional Mark”; *Prohibited* otherwise
 +
-*Contents:* If the subject:markType field contains “Registered Mark” or “Modified Registered Mark”, then this field MUST containy the country or region of the Trademark Office that registered the Registered Mark as an WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
+*Contents:* This field MUST contain the country or region of the Trademark Office that registered the Registered Mark as a WIPO ST.3 two letter country and intergovernmental/regional agency code (see list at http://www.wipo.int/export/sites/www/standards/en/pdf/03-03-01.pdf).
 
 . *Certificate field:* subject:trademarkOfficeName (OID: 1.3.6.1.4.1.53087.1.2)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark” and the applicable country/region has more than one national/regional intellectual property agency where trademarks can be registered; *Optional* if the subject:markType otherwise contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* if the subject:markType does not contain one of the following values: “Registered Mark” or “Modified Registered Mark”
+*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Modified Registered Mark”, or “Provisional Mark” and the applicable country/region has more than one national/regional intellectual property agency where trademarks can be registered; *Optional* if the subject:markType otherwise contains one of the following values: “Registered Mark”, “Modified Registered Mark”, or “Provisional Mark”; *Prohibited* if the subject:markType does not contain one of the following values: “Registered Mark”, “Modified Registered Mark”, or “Provisional Mark”
 +
-*Contents:* This string value identifies the Trademark Office by inserting the Trademark Office name listed in the “Office” column in the WIPO directory of country and regional intellectual property agencies at https://www.wipo.int/directory/en/urls.jsp for the Trademark Office that registered the Registered Mark included in the Verified Mark Certificate or is processing the application of the Mark included in the Mark Certificate.
+*Contents:* This string value identifies the Trademark Office by inserting the Trademark Office name listed in the “Office” column in the WIPO directory of country and regional intellectual property agencies at https://www.wipo.int/directory/en/urls.jsp for the Trademark Office that registered the Registered Mark that was submitted by the Applicant.
 
 . *Certificate field:* subject:trademarkIdentifier (OID: 1.3.6.1.4.1.53087.1.4)
 +
-*Required* if the subject:markType field contains one of the following values: “Registered Mark” or “Modified Registered Mark”; *Prohibited* otherwise
+*Required* if the subject:markType field contains one of the following values: “Registered Mark”, “Modified Registered Mark”, or “Provisional Mark”; *Prohibited* otherwise
 +
 *Contents:* This string value contains the identifier assigned by the Trademark Office to identify the Registered Mark or Registered Mark application.
 
@@ -2932,14 +2981,15 @@ The CA SHALL:
 +
 *Contents:* This field MUST contain one of the following values corresponding to the sub-section in <<_mark_verification_in_verified_mark_certificates>> or <<_mark_verification_in_common_mark_certificates>> that the CA employed to validate the Mark included in the Certificate:
 +
-[%header,cols="1,1"]
+[%header,cols="1,1,1"]
 |===
-|Section number of Mark validation method |subject:markType value
+|Section number of Mark validation method |subject:markType value| Certificate type
 
-|<<_registered_mark_verification>> |Registered Mark
-|<<_government_mark_verification>> |Government Mark
-|<<_proof_of_prior_use>> |Prior Use Mark
-|<<_modification_of_registered_trademark>> |Modified Registered Mark
+|<<_registered_mark_verification>> |Registered Mark| Verified Mark Certificate
+|<<_government_mark_verification>> |Government Mark| Verified Mark Certificate
+|<<_proof_of_prior_use>> |Prior Use Mark| Common Mark Certificate
+|<<_modification_of_registered_trademark>> |Modified Registered Mark| Common Mark Certificate
+|<<_provisional_mark_verification>> |Provisional Mark| Common Mark Certificate
 |===
 
 . *Certificate fields:*
@@ -2984,12 +3034,7 @@ In addition, the CA MAY include brief explanatory text to assist Relying Parties
 
 . *Certificate field:* subject:priorUseMarkSourceURL (OID: 1.3.6.1.4.1.53087.5.1)
 +
-If the subject:markType field contains “Prior Use Mark”:
-+
-* *Optional* if the Common Mark Certificate is issued before April 15, 2025
-* *Required* if the Common Mark Certificate is issued on or after April 15, 2025
-+
-If the subject:markType field does not contain "Prior Use Mark”, then this field is *Prohibited*.
+If the subject:markType field contains “Prior Use Mark”, then this field is *Required*. Otherwise, it is *Prohibited*.
 +
 *Contents:* This field MUST contain the URL where the Mark Representation included in the Mark Certificate was located by the CA during the verification process.
 
@@ -3586,10 +3631,12 @@ This Appendix is still being drafted.
 [appendix]
 == CT Logs Approved by AuthIndicators Working Group
 
-[cols=",",]
+This Appendix lists the Certificate Transparency logs that are acceptable for logging Pre-certificates to comply with these Requirements. The listed log(s) conform to either [RFC6962] or https://c2sp.org/static-ct-api@v1.1.0[static-ct-api version 1.1.0].
+
+[cols=",,",]
 |===
-|Log URL |Name
-|https://gorgon.ct.digicert.com/log |Gorgon
+|Log URL |Name |Kind
+|https://gorgon.ct.digicert.com/log|Gorgon |RFC 6962
 |===
 
 [appendix]
