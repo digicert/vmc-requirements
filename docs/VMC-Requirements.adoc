@@ -68,6 +68,7 @@ This document SHALL be known as the Mark Certificate Requirements (or “MC Requ
 |1.6 |03-07-2024 |03-07-2024
 |1.7 |01-22-2025 |01-22-2025
 |1.8 |06-11-2026 |06-11-2026
+|1.9 |TBD |TBD
 |===
 
 ==== Mark Certificate OIDs
@@ -346,6 +347,8 @@ possession, directly or indirectly, of the power to: (1) direct the management, 
 
 *Parent Company:* A company that Controls a Subsidiary Company.
 
+*Persistent DCV TXT Record:* A DNS TXT record identifying an Applicant in accordance with <<_dns_txt_record_with_persistent_value>>.
+
 *Private Key:* The key of a Key Pair that corresponds to the Public Key used by the Subscriber to sign a MC certificate request. Once the Private Key-Public Key pair has been generated, the Private Key is not used and may be discarded.
 
 *Place of Business*: The location of any facility (such as a factory, retail store, warehouse, etc) where the Applicant's business is conducted.
@@ -522,6 +525,8 @@ Both are published by the AuthIndicators Working Group.
 |Certificate Revocation List
 |DBA
 |Doing Business As
+|DCV
+|Domain Control Validation
 |DNS
 |Domain Name System
 |FIPS
@@ -639,6 +644,8 @@ The Static Certificate Transparency API, v1.1.0, https://c2sp.org/static-ct-api@
 
 WebTrust for Certification Authorities , SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
+RFC8657, Request for Comments: 8657, Certification Authority Authorization (CAA) Record Extensions for Account URI and Automatic Certificate Management Environment (ACME) Method Binding, Landau, November 2019.
+
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, Hoffman-Andrews, November 2019.
 
 X.509, Recommendation ITU-T X.509 (10/2012) | ISO/IEC 9594-8:2014 (E), Information technology - Open Systems Interconnection - The Directory: Public-key and attribute certificate frameworks.
@@ -661,7 +668,7 @@ The CA SHALL publicly disclose its Certificate Policy and/or Certification Pract
 
 The Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647 and MUST include all material required by RFC 3647.
 
-Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement SHALL state the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names; that policy SHALL be consistent with these Requirements. It SHALL clearly specify the set of Issuer Domain Names that the CA recognizes in CAA "issuevmc" records as permitting it to issue. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement SHALL state the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names; that policy SHALL be consistent with these Requirements. It SHALL clearly specify the set of Issuer Domain Names that the CA recognizes in CAA "issuevmc" records as permitting it to issue. If the CA uses the method described in <<_dns_txt_record_with_persistent_value>>, Section 4.2 SHALL also clearly specify the set of Issuer Domain Names that the CA recognizes in Persistent DCV TXT Records. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
@@ -1520,6 +1527,44 @@ NOTE: Once the FQDN has been validated using this method, the CA MAY also issue 
 Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
 
 The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
+
+===== DNS Labeled with Account ID - ACME
+
+This method has not been adopted and MUST NOT be used.
+
+NOTE: This section is reserved so that the numbering of the methods in this section remains aligned with Section 3.2.2.4 of the Baseline Requirements.
+
+===== DNS TXT Record with Persistent Value
+
+Confirming the Applicant's control over the FQDN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "_validation-persist" label prepended to the Authorization Domain Name being validated (i.e. "_validation-persist.[Authorization Domain Name]").
+
+The CA MUST confirm that the RDATA value of the Persistent DCV TXT Record:
+
+. conforms to the issue-value syntax as defined in section 4.2 of RFC 8659, and
+. contains an issuer-domain-name that is an Issuer Domain Name disclosed by the CA in Section 4.2 of its Certificate Policy and/or Certification Practice Statement (see <<_publication_of_information>>), and
+. contains an "accounturi" parameter whose value is a unique URI (as described in section 3 of RFC 8657) identifying the account of the Applicant that requested validation of the FQDN.
+
+The issue-value MAY contain a "persistUntil" parameter. If present, the parameter value MUST be a base-10 encoded integer representing a UNIX timestamp (the number of seconds since 1970-01-01T00:00:00Z, ignoring leap seconds). The issue-value MAY contain additional parameters, and the CA MUST ignore any unknown parameter keys.
+
+For example, a Persistent DCV TXT Record might look like:
+
+```
+_validation-persist.example.com IN TXT "authority.example; accounturi=https://authority.example/acct/123; persistUntil=1782424856"
+```
+
+If the "persistUntil" parameter is present, the CA MUST evaluate its value. If the time of the check is after the time specified in the "persistUntil" parameter value, the CA MUST NOT use the record as evidence of the Applicant's control over the FQDN. The following table shows how the "persistUntil" parameter affects whether a record can be used for validation:
+
+[cols=",,,",]
+|===
+|*Date/time of validation* |*persistUntil* |*Usable for validation* |*Explanation*
+|2025-06-15T12:00:00Z |2026-01-01T00:00:00Z (1767225600) |Yes |Validation time is before the persistUntil timestamp, so the record is usable.
+|2025-06-15T12:00:00Z |2025-01-01T00:00:00Z (1735689600) |No |Validation time is after the persistUntil timestamp, so the record is not usable.
+|2025-06-15T12:00:00Z |(not present) |Yes |No persistUntil parameter is present, so no time restriction applies.
+|===
+
+For the purposes of <<_performing_identification_and_authentication_functions>>, the CA MUST consider 10 days as the maximum validation data reuse period for validations completed using this method.
+
+NOTE: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.
 
 ==== CAA Records for Mark Certificates
 
