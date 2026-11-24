@@ -10,10 +10,13 @@ jobs:
             -   name: Build
                 run: |
                     sudo apt update &&
-                    sudo apt install -y asciidoctor ruby-asciidoctor-pdf pandoc &&
+                    sudo apt install -y asciidoctor ruby pandoc &&
+                    sudo gem install asciidoctor-pdf --no-document &&
+                    command -v asciidoctor-pdf &&
                     asciidoctor-pdf docs/VMC-Requirements.adoc &&
                     /bin/bash -c "asciidoctor --backend docbook --out-file - docs/VMC-Requirements.adoc | pandoc --from docbook --to docx --output docs/VMC-Requirements.docx" &&
                     asciidoctor docs/VMC-Requirements.adoc
+                    run: |
             -   uses: actions/upload-artifact@v4
                 with:
                     path: |
